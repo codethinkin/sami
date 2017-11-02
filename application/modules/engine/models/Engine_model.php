@@ -15,8 +15,14 @@ var $column_order2 = array(null,'nameFuel',null); //set column field database fo
 var $column_search2 = array('nameFuel'); //set column field database for datatable searchable just firstname , lastname , address are searchable
 var $order2 = array('id' => 'desc'); // default order
 
-  public function __construct()
-  {
+
+///Tabla Load
+var $table3 = 'load';
+var $table4 = 'equipmenttype';
+var $table5 = 'mastil';
+var $table6 = 'etapa';
+
+  public function __construct()  {
     parent::__construct();
     $this->load->database();
   }
@@ -31,10 +37,7 @@ var $order2 = array('id' => 'desc'); // default order
          }
      }
 
-
-
-  private function _get_datatables_query()
-  {
+  private function _get_datatables_query()  {
     $this->db->from($this->table);
     $i = 0;
     foreach ($this->column_search as $item) // loop column
@@ -66,8 +69,7 @@ var $order2 = array('id' => 'desc'); // default order
     }
   }
 
-  function get_datatables()
-  {
+  function get_datatables()  {
     $this->_get_datatables_query();
     if($_POST['length'] != -1)
     $this->db->limit($_POST['length'], $_POST['start']);
@@ -75,42 +77,35 @@ var $order2 = array('id' => 'desc'); // default order
 
   }
 
-  function count_filtered()
-  {
+  function count_filtered()  {
     $this->_get_datatables_query();
     $query = $this->db->get();
     return $query->num_rows();
   }
 
-  public function count_all()
-  {
+  public function count_all()  {
     $this->db->from($this->table);
     return $this->db->count_all_results();
   }
 
-
-  public function get_by_id($id)
-  {
+  public function get_by_id($id)  {
     $this->db->from($this->table);
     $this->db->where('id',$id);
     $query = $this->db->get();
     return $query->row();
   }
 
-  public function save($data)
-  {
+  public function save($data)  {
     $this->db->insert($this->table, $data);
     return $this->db->insert_id();
   }
 
-  public function update($where, $data)
-  {
+  public function update($where, $data)  {
     $this->db->update($this->table, $data, $where);
     return $this->db->affected_rows();
   }
 
-  public function delete_by_id($id)
-  {
+  public function delete_by_id($id)  {
     $this->db->where('id', $id);
     $this->db->delete($this->table);
   }
@@ -152,7 +147,7 @@ private function _get_datatables_query_fuel()
 
 function get_datatables_fuel()
 {
-  $this->_get_datatables_query();
+  $this->_get_datatables_query_fuel();
   if($_POST['length'] != -1)
   $this->db->limit($_POST['length'], $_POST['start']);
   return $this->db->get()->result();
@@ -172,7 +167,7 @@ public function count_all_fuel()
   return $this->db->count_all_results2();
 }
 
-
+/*Configuracion Fuel*/
 public function get_by_id_fuel($id)
 {
   $this->db->from($this->table2);
@@ -199,6 +194,106 @@ public function delete_by_id_fuel($id)
   $this->db->delete($this->table2);
 }
 
+/*Finn Configuracion Fuel*/
+
+/*Configuracion Load*/
+public function get_by_id_load($id){
+  $this->db->from($this->table3);
+  $this->db->where('id',$id);
+  $query = $this->db->get();
+  return $query->row();
+}
+
+public function save_load($data){
+  $this->db->insert($this->table3, $data);
+  return $this->db->insert_id();
+}
+
+public function update_load($where, $data){
+  $this->db->update($this->table3, $data, $where);
+  return $this->db->affected_rows();
+}
+
+public function delete_by_id_load($id){
+  $this->db->where('id', $id);
+  $this->db->delete($this->table3);
+}
+/*Fin Configuracion Load*/
 
 
+/*Configuracion Tipo de Equipos*/
+public function get_by_id_equipment($id){
+  $this->db->from($this->table4);
+  $this->db->where('id',$id);
+  $query = $this->db->get();
+  return $query->row();
+}
+
+public function save_equipment($data){
+  $this->db->insert($this->table4, $data);
+  return $this->db->insert_id();
+}
+
+public function update_equipment($where, $data){
+  $this->db->update($this->table4, $data, $where);
+  return $this->db->affected_rows();
+}
+
+public function delete_by_id_equipment($id){
+  $this->db->where('id', $id);
+  $this->db->delete($this->table4);
+}
+/*Fin Configuracion Tipo de Equipos*/
+
+/*Configuracion Tipo de Mastil*/
+public function get_by_id_mastil($id){
+  $this->db->from($this->table5);
+  $this->db->where('id',$id);
+  $query = $this->db->get();
+  return $query->row();
+}
+
+public function save_mastil($data){
+  $this->db->insert($this->table5, $data);
+  return $this->db->insert_id();
+}
+
+public function update_mastil($where, $data){
+  $this->db->update($this->table5, $data, $where);
+  return $this->db->affected_rows();
+}
+
+public function delete_by_id_mastil($id){
+  $this->db->where('id', $id);
+  $this->db->delete($this->table5);
+}
+/*Fin Configuracion Tipo de Mastil*/
+
+/*Configuracion Tipo de Etapa*/
+public function get_by_id_etapa($id)
+{
+  $this->db->from($this->table6);
+  $this->db->where('id',$id);
+  $query = $this->db->get();
+  return $query->row();
+}
+
+public function save_etapa($data)
+{
+  $this->db->insert($this->table6, $data);
+  return $this->db->insert_id();
+}
+
+public function update_etapa($where, $data)
+{
+  $this->db->update($this->table6, $data, $where);
+  return $this->db->affected_rows();
+}
+
+public function delete_by_id_etapa($id)
+{
+  $this->db->where('id', $id);
+  $this->db->delete($this->table6);
+}
+/*Fin Configuracion Tipo de Etapa*/
   }

@@ -8,28 +8,8 @@
 
 	<form action="<?php echo base_url();?>pdf/save" method="POST" id="form">
 		<input type="text" name="txtPDF"><br>
-		<input type="button" onclick"save()" name="btnDownload" id="btnSave">
+		<input type="submit"  name="btnDownload" id="btnSave">
 	</form>
 </section>
-<script type="text/javascript">
-$(document).ready(function() {
-  function add_employee(){
-      save_method = 'add';
 
-
-      $('#form')[0].reset(); // reset form on modals
-
-  }
-
-
-
-})
-
-function save()
-{
-
-  alert("Hola");
-
-}
-</script>
 </html>

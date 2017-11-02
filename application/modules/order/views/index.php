@@ -1,6 +1,7 @@
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <!-- Main content -->
+
   <section class="content">
   <?php if($this->session->flashdata("messagePr")){?>
     <div class="alert alert-info">
@@ -254,13 +255,49 @@
 </div><!-- /.modal -->
 </div><!-- /.modal -->
 
+
+
+
+<div class="modal fade" id="modal_print_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="<?php echo base_url('order/descargar'); ?>" id="form" class="form-horizontal">
+                <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
+                          <input type="text" name="customers" value="">
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary btn-xs">Imprimir</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div><!-- /.modal -->
+
 <script>
 var currentLocation = window.location;
 var table;
 
 
 
+
 $(document).ready(function() {
+
+  $(function() {
+    $('#table td:last-child:contains(PENDIENTE)').closest('tr').css('background-color', 'red');
+    $('#table td:last-child:contains(2)').closest('tr').css('background-color', 'blue');
+    $('#table td:last-child:contains(3)').closest('tr').css('background-color', 'green');
+    // Así sucesivamente hasta llegar al 10
+  });
+
 
 
 
@@ -284,6 +321,7 @@ if($(this).val()==2){$('#frequency').show();}
 });
 
 validate();
+
 
     //datatables
     table = $('#tblorder').DataTable({
@@ -363,7 +401,11 @@ validate();
             $(".data-check").prop('checked', $(this).prop('checked'));
         });
 
-});
+
+
+      });
+
+
 
 function add_order(){
     save_method = 'add';
@@ -417,6 +459,51 @@ function edit_order(id)
     });
 
 }
+
+function print_order(id)
+{
+  //  save_method = 'update';
+
+    $('#form')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    $.ajax({
+         //url: "<?php echo site_url('order/ajax_print')?>"/+id,
+       url : currentLocation + "/order/ajax_print/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="name"]').val(data.name);
+            $('[name="frequency"]').val(data.frequency);
+            $('[name="activity"]').val(data.activity);
+            $('[name="employee"]').val(data.employee);
+            $('[name="observation"]').val(data.observation);
+            $('[name="code"]').val(data.code);
+          /*  $('[name="nit"]').val(data.nit);
+            $('[name="name"]').val(data.name);
+            $('[name="contact"]').val(data.contact);
+            $('[name="phone1"]').val(data.phone1);
+            $('[name="phone2"]').val(data.phone2);
+            $('[name="address"]').val(data.address);
+            $('[name="email"]').val(data.email);*/
+            $('[name="state"]').val(data.state);
+            $('#modal_print_form').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Imprimir Orden'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+
+}
+
 
 
 function reload_table()

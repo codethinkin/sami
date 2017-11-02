@@ -67,15 +67,14 @@ public function ajax_edit($id)
 
                     {
                                       //$this->_validate();
-
                       $data = array(
-
                                         'nameEngine' => $this->input->post('name'),
                                         'type' => $this->input->post('type'),
                                               );
                       $insert = $this->engine->save($data);
                     echo json_encode(array("status" => TRUE));
                     }
+
   public function ajax_update()
                       {
 
@@ -138,10 +137,7 @@ public function ajax_edit($id)
 
 ///////// Modulo combustibles -----------------
 
-public function ajax_list_fuel()
-
-{
-
+public function ajax_list_fuel(){
 $this->load->helper('url');
 $list = $this->engine->get_datatables_fuel();
 $data = array();
@@ -153,7 +149,7 @@ foreach ($list as $fuel) {
   $row[] = $fuel->nameFuel;
 
     $row[] = '<a class="btn btn-primary btn-xs" href="javascript:void(0)" title="Editar" onclick="edit_fuel('."'".$fuel->id."'".')"><i class="glyphicon glyphicon-pencil"></i> </a>
-      <a class="btn btn-danger btn-xs" href="javascript:void(0)" title="Eliminar" onclick="delete_engine('."'".$fuel->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>';
+      <a class="btn btn-danger btn-xs" href="javascript:void(0)" title="Eliminar" onclick="delete_fuel('."'".$fuel->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>';
   $data[] = $row;
 }
 
@@ -167,6 +163,138 @@ $output = array(
 echo json_encode($output);
 
 }
+
+public function ajax_edit_fuel($id){
+                  $data = $this->engine->get_by_id_fuel($id);
+                  echo json_encode($data);
+                }
+
+  public function ajax_add_fuel(){
+                                      //$this->_validate();
+                      $data = array(
+                                        'nameFuel' => $this->input->post('name'),
+                                                );
+                      $insert = $this->engine->save_fuel($data);
+                    echo json_encode(array("status" => TRUE));
+                    }
+  public function ajax_update_fuel(){
+
+                        $data = array(
+
+                          'nameFuel' => $this->input->post('name'),
+                                                );
+                        $this->engine->update_fuel(array('id' => $this->input->post('id')), $data);
+                        echo json_encode(array("status" => TRUE));
+                      }
+  public function ajax_delete_fuel($id){
+                        $this->engine->delete_by_id_fuel($id);
+                      echo json_encode(array("status" => TRUE));
+                      }
+
+/*Configuracion Load**/
+public function ajax_edit_load($id){
+                  $data = $this->engine->get_by_id_load($id);
+                  echo json_encode($data);
+                }
+
+  public function ajax_add_load(){                                      //$this->_validate();
+                      $data = array(
+                            'nameLoad' => $this->input->post('name'),                                                );
+                      $insert = $this->engine->save_load($data);
+                    echo json_encode(array("status" => TRUE));
+                    }
+
+  public function ajax_update_load(){
+                        $data = array(
+                          'nameLoad' => $this->input->post('name'),                                                );
+                        $this->engine->update_load(array('id' => $this->input->post('id')), $data);
+                        echo json_encode(array("status" => TRUE));
+                      }
+public function ajax_delete_load($id){
+                        $this->engine->delete_by_id_load($id);
+                      echo json_encode(array("status" => TRUE));
+                      }
+
+/**Fin Configuracion Load*/
+
+/*Configuracion equipment**/
+public function ajax_edit_equipment($id){
+                  $data = $this->engine->get_by_id_equipmet($id);
+                  echo json_encode($data);
+                }
+
+  public function ajax_add_equipment(){                                      //$this->_validate();
+                      $data = array(
+                            'nameType' => $this->input->post('name'),                                                );
+                      $insert = $this->engine->save_equipment($data);
+                    echo json_encode(array("status" => TRUE));
+                    }
+
+  public function ajax_update_equipment(){
+                        $data = array(
+                          'nameType' => $this->input->post('name'),                                                );
+                        $this->engine->update_equipmet(array('id' => $this->input->post('id')), $data);
+                        echo json_encode(array("status" => TRUE));
+                      }
+public function ajax_delete_equipment($id){
+                        $this->engine->delete_by_id_equipmet($id);
+                      echo json_encode(array("status" => TRUE));
+                      }
+
+/**Fin Configuracion equipment*/
+
+/*Configuracion mastil**/
+public function ajax_edit_mastil($id){
+                  $data = $this->engine->get_by_id_mastil($id);
+                  echo json_encode($data);
+                }
+
+  public function ajax_add_mastil(){                                      //$this->_validate();
+                      $data = array(
+                            'nameMastil' => $this->input->post('name'),                                                );
+                      $insert = $this->engine->save_mastil($data);
+                    echo json_encode(array("status" => TRUE));
+                    }
+
+  public function ajax_update_mastil(){
+                        $data = array(
+                          'nameMastil' => $this->input->post('name'),                                                );
+                        $this->engine->update_mastil(array('id' => $this->input->post('id')), $data);
+                        echo json_encode(array("status" => TRUE));
+                      }
+public function ajax_delete_mastil($id){
+                        $this->engine->delete_by_id_mastil($id);
+                      echo json_encode(array("status" => TRUE));
+                      }
+
+/**Fin Configuracion mastil*/
+
+/*Configuracion Etapa**/
+public function ajax_edit_etapa($id){
+                  $data = $this->engine->get_by_id_etapa($id);
+                  echo json_encode($data);
+                }
+
+  public function ajax_add_etapa(){                                      //$this->_validate();
+                      $data = array(
+                            'nameEtapa' => $this->input->post('name'),                                                );
+                      $insert = $this->engine->save_etapa($data);
+                    echo json_encode(array("status" => TRUE));
+                    }
+
+  public function ajax_update_etapa(){
+                        $data = array(
+                          'nameEtapa' => $this->input->post('name'),                                                );
+                        $this->engine->update_etapa(array('id' => $this->input->post('id')), $data);
+                        echo json_encode(array("status" => TRUE));
+                      }
+public function ajax_delete_etapa($id){
+                        $this->engine->delete_by_id_etapa($id);
+                      echo json_encode(array("status" => TRUE));
+                      }
+
+/**Fin Configuracion Etapa*/
+
 
 
 

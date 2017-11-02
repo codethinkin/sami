@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pdf extends CI_Controller{
@@ -64,5 +65,7 @@ echo "hola";
          //  //download it.
          //  $this->m_pdf->pdf->Output($pdfFilePath, "D");
   	}
+
+
 
 }

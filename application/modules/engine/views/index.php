@@ -10,267 +10,165 @@
         </div>
       <?php } ?>
       <!-- Default box -->
-      <div class="box box-success" >
-        <div class="box-header with-border">
-          <h3 class="box-title">Configuración General Para </h3>
+
+<div class="row">
+<div class="col-md-4">
+
+  <div class="container">
+
+<!--Configuracion de Motores-->
+  <div class="card hovercard">
+     <img src="http://placehold.it/300x200/000000/&text=Header" alt=""/>
+     <div class="avatar">
+        <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+     </div>
+     <div class="info">
+        <div class="title">
+           Tipo Motor
         </div>
-        <div class="box-body" style="background: rgb(249, 250, 252);">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="tabbable tabs-left">
-                <ul id="myTab4" class="nav nav-tabs col-md-3">
-                  <li class="active">
-                    <a href="#tab_General" data-toggle="tab">
-                      <i class="fa fa-cogs"></i>&nbsp;&nbsp;
-                      <span>Motores</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#emailSetting" data-toggle="tab">
-                      <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;&nbsp;
-                      <span>Combustibles</span>
-                    </a>
-                  </li>
-                  <li id="permis">
-                    <a href="#permissionSetting" data-toggle="tab">
-                      <i class="fa fa-indent" aria-hidden="true"></i>
-                      <span>Capacidad de Carga</span>
-                    </a>
-                  </li>
-                  <li id="templates">
-                    <a href="#templates-div" data-toggle="tab">
-                      <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
-                      <span>Mastil</span>
-                    </a>
-                  </li>
-                </ul>
-                <div class="tab-content col-md-9">
-                  <div class="tab-pane fade in" id="templates-div"></div>
-                    <div class="tab-pane fade active in" id="tab_General">
-                      <div class="row">
-                        <div class="box-header my-header">
-                          <h3 class="box-title">Configuracion de Motores</h3>
-                        </div>
-                      </div>
-                      <div class="box-body">
+        <div class="desc">Ingrese Los Diferentes Tipos de Motores</div>
 
-<div class="box-tools">
-<button class="btn btn-primary btn-xs" onclick="add_engine()"><i class="glyphicon glyphicon-plus"></i> Nuevo Registro</button>
-<button class="btn btn-default btn-xs" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Recargar</button>
+     </div>
+     <div class="bottom">
+       <button type="button" class="btn btn-primary" onclick="save_engine()">Abrir
+       </button>
+     </div>
+  </div>
+  </div>
 </div>
-                        <table id="tblEngine" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" id="check-all"></th>
-                                <th>Nombre</th>
-                                <th>Tipo</th>
-                                <th style="width:150px;">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
+<!--Fin Configuracion de motores-->
 
-                    </table>
-                      </div>
+<!--Configuracion de combustible-->
+<div class="col-md-4">
 
+  <div class="container">
 
-                        </div>
-                        <div class="tab-pane fade" id="emailSetting">
-                          <div class="row">
-                            <div class="box-header my-header">
-                              <h3 class="box-title">Configuración Combustibles</h3>
-                            </div>
-                          </div>
+<!--Configuracion de Motores-->
+  <div class="card hovercard">
+     <img src="http://placehold.it/300x200/000000/&text=Header" alt=""/>
+     <div class="avatar">
+        <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+     </div>
+     <div class="info">
+        <div class="title">
+           Tipo de Combustibles
+        </div>
+        <div class="desc">Ingrese Los Diferentes Tipos de Combustibles</div>
 
-                          <div class="box-body">
+     </div>
+     <div class="bottom">
+       <button type="button" class="btn btn-primary" onclick="save_fuel()">Abrir
+       </button>
+     </div>
+  </div>
+  </div>
+</div>
+<!--Fion Configuracion de Combustibles-->
+<!-- Configuracion de Capacidad  de Carga-->
+<div class="col-md-4">
 
-                    <div class="box-tools">
-                    <button class="btn btn-primary btn-xs" onclick="add_fuel()"><i class="glyphicon glyphicon-plus"></i> Nuevo Registro</button>
-                    <button class="btn btn-default btn-xs" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Recargar</button>
-                    </div>
-                            <table id="tblFuele" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" id="check-all"></th>
-                                    <th>Nombre</th>
-                                    <th style="width:150px;">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
+  <div class="container">
+<!--Configuracion de Motores-->
+  <div class="card hovercard">
+     <img src="http://placehold.it/300x200/000000/&text=Header" alt=""/>
+     <div class="avatar">
+        <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+     </div>
+     <div class="info">
+        <div class="title">
+           Capacidad de Carga
+        </div>
+        <div class="desc">Ingrese Los Diferentes Capacidades de Carga</div>
 
-                        </table>
-                          </div>
+     </div>
+     <div class="bottom">
+       <button type="button" class="btn btn-primary" onclick="save_load()">Abrir
+       </button>
+     </div>
+  </div>
+  </div>
+</div>
+<!-- Configuracion de Capacidad  de Carga-->
+</div>
+<div class="row">
+<div class="col-md-4">
 
-                        </div>
-                        <div class="tab-pane " id="permissionSetting">
-                          <div class="row">
-                            <div class="box-header my-header">
-                              <h3 class="box-title">Permissions</h3>
-                            </div>
-                          </div>
-                          <div class="panel-group" id="accordion">
-                            <h5 class="over-title">
-                              <div class="row form-horizontal">
-                                <div class="col-md-3">
-                                  <a class="btn btn-o btn-success" id="addmoreRoles" href="#"><i class="fa fa-plus"></i> Agregar Tipo de Usuario</a>
-                                </div>
-                                <div class="col-md-9">
-                                  <div class="form-horizontal"  id="addmoreRolesShow">
-                                    <form>
-                                      <div class="form-group">
-                                        <label for="roles" class="control-label col-md-2 thfont">Tipo de Usuario</label>
-                                        <div class="col-md-5">
-                                          <input type="text" name="roles"  id="roles"  class="form-control" placeholder="Ingrese Usuario" />
-                                          <p id="showRolesMSG" style="color:red;"></p>
-                                        </div>
-                                        <button type="button" id="rolesAdd" class="btn  btn-success">Grabar</button>
-                                      </div>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </h5>
-                          </div>
-                          <form class="form-horizontal" action="<?php echo base_url().'setting/permission' ?>" method="post">
-                          <?php
-                          $permission = getAllDataByTable('permission');
-                          $setPermission =array();
-                          $own_create = '';$own_read = '';$own_update = '';$own_delete = '';
-                          $all_create = '';$all_read = '';$all_update = '';$all_delete = '';
-                          $i=0;
-                          $permission = isset($permission)&&is_array($permission)&&!empty($permission)?$permission:array();
-                          if(isset($permission[1])) {
-                            foreach($permission as $perkey=>$value){
-                              $id = isset($value->id)?$value->id:'';
-                              $user_type = isset($value->user_type)?$value->user_type:'';
-                              $data = isset($value->data)?json_decode($value->data):'';
-                              if($user_type=='admin'){}else{
-                          ?>
-                                <div class="panel panel-default">
-                                  <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_<?php echo $id;?>"><i class="fa fa-bars"></i> <?php echo  'Permissions for: '. ucfirst($user_type);?></a></h4>
-                                  </div>
-                                  <div id="collapse_<?php echo $id;?>" class="panel-collapse collapse <?php if($i==0){echo"in";}?>">
-                                    <div class="panel-body">
-                                      <table class="table table-bordered dt-responsive rolesPermissionTable">
-                                        <thead>
-                                          <tr class="showRolesPermission">
-                                            <th scope="col">Modules</th>
-                                            <th scope="col">Create</th>
-                                            <th scope="col">Read</th>
-                                            <th scope="col">Update</th>
-                                            <th scope="col">Delete</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <?php
-                                          if(isset($data) && !empty($data)){
-                                            foreach($data as $perkey=>$valueR){
-                                              $perkey = isset($perkey)?$perkey:'';
-                                              $valueR = isset($valueR)?$valueR:'';
-                                              if(isset($valueR)) {
-                                                $setPermissionCheck = $valueR;
-                                                $own_create = isset($setPermissionCheck->own_create)?$setPermissionCheck->own_create:'';
-                                                $own_read = isset($setPermissionCheck->own_read)?$setPermissionCheck->own_read:'';
-                                                $own_update = isset($setPermissionCheck->own_update)?$setPermissionCheck->own_update:'';
-                                                $own_delete = isset($setPermissionCheck->own_delete)?$setPermissionCheck->own_delete:'';
-                                                $all_create = isset($setPermissionCheck->all_create)?$setPermissionCheck->all_create:'';
-                                                $all_read = isset($setPermissionCheck->all_read)?$setPermissionCheck->all_read:'';
-                                                $all_update = isset($setPermissionCheck->all_update)?$setPermissionCheck->all_update:'';
-                                                $all_delete = isset($setPermissionCheck->all_delete)?$setPermissionCheck->all_delete:'';
-                                              } else {
-                                                $setPermissionCheck =array();$own_create = '';$own_read = '';$own_update = '';$own_delete = '';
-                                                $all_create = '';$all_read = '';$all_update = '';$all_delete = '';
-                                              }
-                                            ?>
-                                              <tr>
-                                                <th scope="col" colspan="5" class="showRolesPermission text-center"><?php echo ucfirst(str_replace('_', ' ', $perkey));?>
-                                                  <?php
-                                                        //$perkey = str_replace(' ', '_SPACE_', $perkey);
-                                                        $user_type = str_replace(' ', '_SPACE_', $user_type);
-                                                  ?>
-                                                  <input type="hidden" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>]" value="<?php echo $perkey;?>" />
-                                                </th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row" class="thfont">Entradas Propias</th>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][own_create]" value="1" <?php if($own_create==1){echo"checked";}?>/></td>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][own_read]"  value="1" <?php if($own_read==1){echo"checked";}?>/></td>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][own_update]"  value="1" <?php if($own_update==1){echo"checked";}?>/></td>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][own_delete]" value="1" <?php if($own_delete==1){echo"checked";}?>/></td>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row" class="thfont">Todas las Entradas</th>
-                                                <td>-</td>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][all_read]"  value="1" <?php if($all_read==1){echo"checked";}?>/></td>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][all_update]"  value="1" <?php if($all_update==1){echo"checked";}?> /></td>
-                                                <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $perkey;?>][all_delete]" value="1" <?php if($all_delete==1){echo"checked";}?>/></td>
-                                              </tr>
-                                      <?php }
-                                          } else {
-                                            $blanckModule1 = getRowByTableColomId('permission','admin','user_type','data');
-                                            if(isset($blanckModule1) && $blanckModule1 != '') {
-                                              foreach(json_decode($blanckModule1) as $key1=>$value1) {
-                                      ?>
-                                                <tr>
-                                                  <th scope="col" colspan="5" class="showRolesPermission text-center"><?php echo ucfirst(str_replace('_', ' ', $key1));?>
-                                                    <?php
-                                                      //$key1 = str_replace(' ', '_SPACE_', $key1);
-                                                      $user_type = str_replace(' ', '_SPACE_', $user_type);
-                                                    ?>
-                                                    <input type="hidden" name="data[<?php echo $user_type;?>][<?php echo $key1;?>]" value="<?php echo $key1;?>" />
-                                                  </th>
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row" class="thfont">Entradas Propias</th>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][own_create]" value="1"/></td>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][own_read]"  value="1"/></td>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][own_update]"  value="1"/></td>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][own_delete]" value="1"/></td>
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row" class="thfont">Todas las Entradas</th>
-                                                  <td>-</td>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][all_read]"  value="1"/></td>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][all_update]"  value="1"/></td>
-                                                  <td><input type="checkbox" name="data[<?php echo $user_type;?>][<?php echo $key1;?>][all_delete]" value="1"/></td>
-                                                </tr>
-                                          <?php
-                                              }
-                                            }
-                                          }
-                                          ?>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </div>
-                                </div>
-                        <?php
-                                $i++;
-                              }
-                            }
-                        ?>
-                            <hr>
-                            <input type="submit" name="save" value="Grabar Permisos" class="btn btn-wide btn-success margin-top-20" />
-                    <?php } ?>
-                          </form>
-                        </div>
-                        <!-- /.panel -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.box-body -->
+  <div class="container">
+<!--Configuracion de Motores-->
+  <div class="card hovercard">
+     <img src="http://placehold.it/300x200/000000/&text=Header" alt=""/>
+     <div class="avatar">
+        <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+     </div>
+     <div class="info">
+        <div class="title">
+           Tipo Equipo
+        </div>
+        <div class="desc">Ingrese Los Diferentes Tipos de Equipo</div>
+
+     </div>
+     <div class="bottom">
+       <button type="button" class="btn btn-primary" onclick="save_equipment()">Abrir
+       </button>
+     </div>
+  </div>
+  </div>
+</div>
+<!--Fin Configuracion de motores-->
+<!--Configuracion de combustible-->
+<div class="col-md-4">
+  <div class="container">
+<!--Configuracion de Motores-->
+  <div class="card hovercard">
+     <img src="http://placehold.it/300x200/000000/&text=Header" alt=""/>
+     <div class="avatar">
+        <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+     </div>
+     <div class="info">
+        <div class="title">
+           Mastil
+        </div>
+        <div class="desc">Ingrese Mastil</div>
+
+     </div>
+     <div class="bottom">
+       <button type="button" class="btn btn-primary" onclick="save_mastil()">Abrir
+       </button>
+     </div>
+  </div>
+  </div>
+</div>
+<!--Fion Configuracion de Mastil-->
+<div class="col-md-4">
+
+  <div class="container">
+<!--Configuracion de Motores-->
+  <div class="card hovercard">
+     <img src="http://placehold.it/300x200/000000/&text=Header" alt=""/>
+     <div class="avatar">
+        <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+     </div>
+     <div class="info">
+        <div class="title">
+           Etapas
+        </div>
+        <div class="desc">Ingrese Las Diferentes Etapas</div>
+
+     </div>
+     <div class="bottom">
+       <button type="button" class="btn btn-primary" onclick="save_etapa()">Abrir
+       </button>
+     </div>
+  </div>
+  </div>
+</div>
+</div>
+<!-- /.box-body -->
         </section>
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
-
-      <div class="modal fade" id="modal_form" role="dialog">
+      <div class="modal fade" id="modal_form_engine" role="dialog">
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
@@ -278,6 +176,23 @@
                       <h3 class="modal-title">Person Form</h3>
                   </div>
                   <div class="modal-body form">
+
+                    <table id="tblengine" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="check-all"></th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th style="width:150px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                </table>
+<hr>
+<label for="" class="label-info">Formulario de Registro</label>
+<hr>
                       <form action="#" id="form_engine" class="form-horizontal">
                       <input type="hidden" value="" name="id"/>
                           <div class="form-body">
@@ -303,7 +218,7 @@
                       </form>
                   </div>
                   <div class="modal-footer">
-                      <button type="button" id="btnSave" onclick="save_engine()" class="btn btn-primary btn-xs">Grabar</button>
+                      <button type="button" id="btnSave" onclick="save()" class="btn btn-primary btn-xs">Grabar</button>
                       <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
                   </div>
               </div><!-- /.modal-content -->
@@ -325,6 +240,22 @@
                     <div class="form-body">
                         <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
 
+                        <table id="tblfuel" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="check-all"></th>
+                                <th>Nombre</th>
+                                <th style="width:150px;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+
+                    </table>
+      <hr>
+      <label for="" class="label-info">Formulario de Registro</label>
+      <hr>
+
                         <div class="form-group">
                             <label class="control-label col-md-3">Nombre</label>
                             <div class="col-md-9">
@@ -338,7 +269,79 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="btnSave" onclick="save_fuel()" class="btn btn-primary btn-xs">Grabar</button>
+                <button type="button" id="btnSave" onclick="add_fuel()" class="btn btn-primary btn-xs">Grabar</button>
+                <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!--Modal Carga-->
+      <div class="modal fade" id="modal_form_load" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_load" class="form-horizontal">
+                <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Nombre</label>
+                            <div class="col-md-9">
+                                <input name="name" id="name" placeholder="" class="form-control input-sm" type="text" required>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+
+                                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="add_load()" class="btn btn-primary btn-xs">Grabar</button>
+                <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--Fin Modal Carga-->
+
+
+<!--Modal Equipo-->
+      <div class="modal fade" id="modal_form_equipment" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_equipment" class="form-horizontal">
+                <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Nombre</label>
+                            <div class="col-md-9">
+                                <input name="name" id="name" placeholder="" class="form-control input-sm" type="text" required>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+
+                                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="add_equipment()" class="btn btn-primary btn-xs">Grabar</button>
                 <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
             </div>
         </div><!-- /.modal-content -->
@@ -347,317 +350,1151 @@
 
 
 
-<!--Fin Modal Combustibles-->
+<!--Modal mastil-->
+      <div class="modal fade" id="modal_form_mastil" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_mastil" class="form-horizontal">
+                <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
 
-      <script>
-    var currentLocation = window.location;
-      var table;
-      var table2;
-
-      $(document).ready(function() {
-      validate();
-
-          //datatables
-          table = $('#tblEngine').DataTable({
-            "language":
-                      {
-                    "sProcessing":     "Procesando...",
-                        "sLengthMenu":     "Mostrar _MENU_ registros",
-                        "sZeroRecords":    "No se encontraron resultados",
-                        "sEmptyTable":     "Ningún dato disponible en esta tabla",
-                        "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                        "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-                        "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-                        "sInfoPostFix":    "",
-                        "sSearch":         "Buscar:",
-                        "searchPlaceholder":		"Dato para buscar",
-                        "sUrl":            "",
-                        "sInfoThousands":  ",",
-                        "sLoadingRecords": "Cargando...",
-                        "oPaginate": {
-                        "sFirst":    "Primero",
-                        "sLast":     "Último",
-                        "sNext":     "Siguiente",
-                        "sPrevious": "Anterior"
-                        },
-
-                  "oAria": {
-                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                        }
-                      },
-
-                  "lengthMenu":		[[8, 10, 20, 25, 50, -1], [8, 10, 20, 25, 50, "Todos"]],
-                        "iDisplayLength":	8,
-                          "processing": true, //Feature control the processing indicator.
-                          "serverSide": true, //Feature control DataTables' server-side processing mode.
-                          "order": [], //Initial no order.
-                    "processing": true, //Feature control the processing indicator.
-              "serverSide": true, //Feature control DataTables' server-side processing mode.
-              "order": [], //Initial no order.
-
-              // Load data for the table's content from an Ajax source
-              "ajax": {
-                  "url": "<?php echo site_url('Engine/ajax_list')?>",
-                  "type": "POST"
-              },
-
-              //Set column definition initialisation properties.
-              "columnDefs": [
-              {
-                  "targets": [ 0 ], //first column / numbering column
-                  "orderable": false, //set not orderable
-              },
-              ],
-
-          });
-
-          table2 = $('#tblFuele').DataTable({
-            "language":
-                      {
-                    "sProcessing":     "Procesando...",
-                        "sLengthMenu":     "Mostrar _MENU_ registros",
-                        "sZeroRecords":    "No se encontraron resultados",
-                        "sEmptyTable":     "Ningún dato disponible en esta tabla",
-                        "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                        "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-                        "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-                        "sInfoPostFix":    "",
-                        "sSearch":         "Buscar:",
-                        "searchPlaceholder":		"Dato para buscar",
-                        "sUrl":            "",
-                        "sInfoThousands":  ",",
-                        "sLoadingRecords": "Cargando...",
-                        "oPaginate": {
-                        "sFirst":    "Primero",
-                        "sLast":     "Último",
-                        "sNext":     "Siguiente",
-                        "sPrevious": "Anterior"
-                        },
-
-                  "oAria": {
-                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                        }
-                      },
-
-                  "lengthMenu":		[[8, 10, 20, 25, 50, -1], [8, 10, 20, 25, 50, "Todos"]],
-                        "iDisplayLength":	8,
-                          "processing": true, //Feature control the processing indicator.
-                          "serverSide": true, //Feature control DataTables' server-side processing mode.
-                          "order": [], //Initial no order.
-                    "processing": true, //Feature control the processing indicator.
-              "serverSide": true, //Feature control DataTables' server-side processing mode.
-              "order": [], //Initial no order.
-
-              // Load data for the table's content from an Ajax source
-              "ajax": {
-                  "url": "<?php echo site_url('engine/ajax_list_fuel')?>",
-                  "type": "POST"
-              },
-
-              //Set column definition initialisation properties.
-              "columnDefs": [
-              {
-                  "targets": [ 0 ], //first column / numbering column
-                  "orderable": false, //set not orderable
-              },
-              ],
-
-          });
-
-              //set input/textarea/select event when change value, remove class error and remove text help block
-
-              $("input").change(function(){
-                  $(this).parent().parent().removeClass('has-error');
-                  $(this).next().empty();
-              });
-              $("textarea").change(function(){
-                  $(this).parent().parent().removeClass('has-error');
-                  $(this).next().empty();
-              });
-              $("select").change(function(){
-                  $(this).parent().parent().removeClass('has-error');
-                  $(this).next().empty();
-              });
-
-              //check all
-
-              $("#check-all").click(function () {
-                  $(".data-check").prop('checked', $(this).prop('checked'));
-              });
-
-      });
-
-      function add_fuel(){
-          save_method = 'add';
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Nombre</label>
+                            <div class="col-md-9">
+                                <input name="name" id="name" placeholder="" class="form-control input-sm" type="text" required>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
 
 
-          $('#form_fuel')[0].reset(); // reset form on modals
-          $('.form-group').removeClass('has-error'); // clear error class
-          $('.help-block').empty(); // clear error string
-          $('#modal_form').modal('show'); // show bootstrap modal
-          $('.modal-title').text('Registro Nuevo de Motor'); // Set Title to Bootstrap modal title
-      }
-
-      function edit_fuel(id)
-      {
-          save_method = 'update';
-
-          $('#form_fuel')[0].reset(); // reset form on modals
-          $('.form-group').removeClass('has-error'); // clear error class
-          $('.help-block').empty(); // clear error string
+                                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="add_mastil()" class="btn btn-primary btn-xs">Grabar</button>
+                <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 
-          $.ajax({
-               //url: "<?php echo site_url('Engine/ajax_edit')?>"/+id,
-             url : currentLocation + "/engine/ajax_edit/"+id,
-              type: "GET",
-              dataType: "JSON",
-              success: function(data)
-              {
-                  $('[name="id"]').val(data.id);
-                  $('[name="name"]').val(data.nameFuel);
-                  $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-                  $('.modal-title').text('Editar Motor'); // Set title to Bootstrap modal title
-              },
+<!--Modal etapa-->
+      <div class="modal fade" id="modal_form_etapa" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_etapa" class="form-horizontal">
+                <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
 
-              error: function (jqXHR, textStatus, errorThrown)
-              {
-                  alert('Error get data from ajax');
-              }
-          });
-
-      }
-
-
-      function reload_table()
-      {
-          table.ajax.reload(null,false); //reload datatable ajax
-      }
-
-      function save_engine()
-      {
-      //  validate();
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Nombre</label>
+                            <div class="col-md-9">
+                                <input name="name" id="name" placeholder="" class="form-control input-sm" type="text" required>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
 
 
-          $('#btnSave').text('saving...'); //change button text
-          $('#btnSave').attr('disabled',true); //set button disable
-          var url;
-          if(save_method == 'add') {
-              url = currentLocation + "/engine/ajax_add_fuel/";
-          } else {
-              url = currentLocation + "/engine/ajax_update_fuel/";
-          }
-
-          var formData = new FormData($('#form_fuel')[0]);
-          $.ajax({
-              url : url,
-              type: "POST",
-              data: formData,
-              contentType: false,
-              processData: false,
-              dataType: "JSON",
-              success: function(data)
-              {
-                  if(data.status) //if success close modal and reload ajax table
-                  {
-                      $('#modal_form').modal('hide');
-                      reload_table();
-                  }
-                  else
-                  {
-                      for (var i = 0; i < data.inputerror.length; i++)
-                      {
-                          $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
-                          $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
-                      }
-                  }
-                  $('#btnSave').text('Grabar'); //change button text
-                  $('#btnSave').attr('disabled',false); //set button enable
-              },
-              error: function (jqXHR, textStatus, errorThrown)
-              {
-                  alert('Error al Guardar ó  Actualizar la Información');
-                  $('#btnSave').text('Grabar'); //change button text
-                  $('#btnSave').attr('disabled',false); //set button enable
-              }
-
-          });
-
-      }
+                                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="add_etapa()" class="btn btn-primary btn-xs">Grabar</button>
+                <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
-      function delete_fuel(id)
-      {
-          if(confirm('Esta seguro de borrar esta información?'))
-          {
-              // ajax delete data to database
-              $.ajax({
-                  url : currentLocation + "/engine/ajax_delete_fuel/"+id,
-                  type: "POST",
-                  dataType: "JSON",
-                  success: function(data)
-                  {
-                              $('#modal_form_fuel').modal('hide');
-                      reload_table();
+<script>
+var currentLocation = window.location;
+var table;
+
+$(document).ready(function() {
+//validate();
+
+    //datatables
+    table = $('#tblengine').DataTable({
+      "language":
+                {
+              "sProcessing":     "Procesando...",
+                  "sLengthMenu":     "Mostrar _MENU_ registros",
+                  "sZeroRecords":    "No se encontraron resultados",
+                  "sEmptyTable":     "Ningún dato disponible en esta tabla",
+                  "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                  "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                  "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                  "sInfoPostFix":    "",
+                  "sSearch":         "Buscar:",
+                  "searchPlaceholder":		"Dato para buscar",
+                  "sUrl":            "",
+                  "sInfoThousands":  ",",
+                  "sLoadingRecords": "Cargando...",
+                  "oPaginate": {
+                  "sFirst":    "Primero",
+                  "sLast":     "Último",
+                  "sNext":     "Siguiente",
+                  "sPrevious": "Anterior"
                   },
-                error: function (jqXHR, textStatus, errorThrown)
-                  {
-                      alert('Error al tratar de borrar la información');
+
+            "oAria": {
+                  "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                   }
-              });
-          }
-      }
+                },
+
+            "lengthMenu":		[[8, 10, 20, 25, 50, -1], [8, 10, 20, 25, 50, "Todos"]],
+                  "iDisplayLength":	8,
+                    "processing": true, //Feature control the processing indicator.
+                    "serverSide": true, //Feature control DataTables' server-side processing mode.
+                    "order": [], //Inameial no order.
+              "processing": true, //Feature control the processing indicator.
+        "serverSide": true, //Feature control DataTables' server-side processing mode.
+        "order": [], //Inameial no order.
+
+        // Load data for the table's content from an Ajax source
+        "ajax": {
+            "url": "<?php echo site_url('engine/ajax_list')?>",
+            "type": "POST"
+        },
+
+        //Set column definameion inameialisation properties.
+        "columnDefs": [
+        {
+            "targets": [ 0 ], //first column / numbering column
+            "orderable": false, //set not orderable
+        },
+        ],
+
+    });
+
+        //set input/textarea/select event when change value, remove class error and remove text help block
+
+/*
+    table = $('#tblfuel').DataTable({
+          "language":
+                    {
+                  "sProcessing":     "Procesando...",
+                      "sLengthMenu":     "Mostrar _MENU_ registros",
+                      "sZeroRecords":    "No se encontraron resultados",
+                      "sEmptyTable":     "Ningún dato disponible en esta tabla",
+                      "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                      "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                      "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                      "sInfoPostFix":    "",
+                      "sSearch":         "Buscar:",
+                      "searchPlaceholder":		"Dato para buscar",
+                      "sUrl":            "",
+                      "sInfoThousands":  ",",
+                      "sLoadingRecords": "Cargando...",
+                      "oPaginate": {
+                      "sFirst":    "Primero",
+                      "sLast":     "Último",
+                      "sNext":     "Siguiente",
+                      "sPrevious": "Anterior"
+                      },
+
+                "oAria": {
+                      "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                      }
+                    },
+
+                "lengthMenu":		[[8, 10, 20, 25, 50, -1], [8, 10, 20, 25, 50, "Todos"]],
+                      "iDisplayLength":	8,
+                        "processing": true, //Feature control the processing indicator.
+                        "serverSide": true, //Feature control DataTables' server-side processing mode.
+                        "order": [], //Inameial no order.
+                  "processing": true, //Feature control the processing indicator.
+            "serverSide": true, //Feature control DataTables' server-side processing mode.
+            "order": [], //Inameial no order.
+
+            // Load data for the table's content from an Ajax source
+            "ajax": {
+                "url": "<?php echo site_url('engine/ajax_list_fuel')?>",
+                "type": "POST"
+            },
+
+            //Set column definameion inameialisation properties.
+            "columnDefs": [
+            {
+                "targets": [ 0 ], //first column / numbering column
+                "orderable": false, //set not orderable
+            },
+            ],
+
+        });*/
+
+        $("input").change(function(){
+            $(this).parent().parent().removeClass('has-error');
+            $(this).next().empty();
+        });
+        $("textarea").change(function(){
+            $(this).parent().parent().removeClass('has-error');
+            $(this).next().empty();
+        });
+        $("select").change(function(){
+            $(this).parent().parent().removeClass('has-error');
+            $(this).next().empty();
+        });
+
+        //check all
+
+        $("#check-all").click(function () {
+            $(".data-check").prop('checked', $(this).prop('checked'));
+        });
+
+});
+
+function save_engine(){
+    save_method = 'add';
+    $('#form_engine')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form_engine').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Registro nuevo Tipo de Equipo'); // Set Title to Bootstrap modal title
+}
+function edit_engine(id){
+    save_method = 'update';
+
+    $('#form_engine')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
 
 
 
-      function validate(){
+    $.ajax({
+         //url: "<?php echo site_url('engine/ajax_edit')?>"/+id,
+       url : currentLocation + "/engine/ajax_edit/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="nameEngine"]').val(data.name);
+            $('[name="type"]').val(data.type);
+            $('#modal_form_engine').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Editar Tipo Motor'); // Set title to Bootstrap modal title
+        },
 
-        $('#msgbx_err').hide();
-           $('#name').blur(function(){
-              var email_val = $("#nit").val();
-              if(email_val){
-                  $('#msgbx_err').show();
-                  $.post(currentLocation + "/engine/nit_check_Engine", {
-                      nit: email_val
-                  }, function(response){
-                      $('#loading').hide();
-                      $('#msgbx_err').html('').html(response.message).show().delay(6000).fadeOut();
-                  });
-                  return false;
-              }
-          });
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
 
-      }
+}
+function reload_table(){
+    table.ajax.reload(null,false); //reload datatable ajax
+}
+function save(){
+  validate();
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+    var url;
+    if(save_method == 'add') {
+        url = currentLocation + "/engine/ajax_add/";
+    } else {
+        url = currentLocation + "/engine/ajax_update/";
+    }
 
-      function detail_Engine(id)
-      {
-        $('#form_engine')[0].reset(); // reset form on modals
-        $('.form-group').removeClass('has-error'); // clear error class
-        $('.help-block').empty(); // clear error string
-        $('#modal_detail').modal('show'); // show bootstrap modal
+    var formData = new FormData($('#form_engine')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status) //if success close modal and reload ajax table
+            {
+                $('#modal_form').modal('hide');
+                reload_table();
+            }
+            else
+            {
+                for (var i = 0; i < data.inputerror.length; i++)
+                {
+                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                }
+            }
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alertify.alert('Error!', 'Error al Guardar ó  Actualizar la Información, Posiblemente el Campo a Registrar ya Exista... Contacte al administrador....', function(){ alertify.success('Ok'); });
 
-        //Ajax Load data from ajax
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        }
 
+    });
+
+}
+function delete_engine(id){
+    if(confirm('Esta seguro de borrar esta información?'))
+    {
+        // ajax delete data to database
         $.ajax({
-            url : currentLocation + "/engine/ajax_edit/" + id,
-            type: "GET",
+            url : currentLocation + "/engine/ajax_delete/"+id,
+            type: "POST",
             dataType: "JSON",
             success: function(data)
             {
-              $('[name="id"]').val(data.id);
-              $('[name="name"]').val(data.nameEngine);
-              $('[name="type"]').val(data.type);
-               $('.modal-title').text('Movimientos del Motores'); // Set Title to Bootstrap modal title
-
+                        $('#modal_form').modal('hide');
+                reload_table();
             },
-
-            error: function (jqXHR, textStatus, errorThrown)
+          error: function (jqXHR, textStatus, errorThrown)
             {
-                alert('Error get data from ajax');
+                  alertify.alert('Error!', 'No es posible borar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
             }
         });
+    }
+}
+function bulk_delete(){
+    var list_id = [];
+    $(".data-check:checked").each(function() {
+            list_id.push(this.value);
+    });
+    if(list_id.length > 0)
+    {
+        if(confirm('Are you sure delete this '+list_id.length+' data?'))
+        {
+            $.ajax({
+                type: "POST",
+                data: {id:list_id},
+                url: currentLocation + "/engine/ajax_bulk_delete_engine",
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status)
+                    {
+                      reload_table();
+                    }
+                    else
+                    {
+                          alertify.alert('Error!', 'Error... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                      alertify.alert('Error!', 'Error al Eliminar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                }
+            });
+        }
+    }
+    else
+    {
+        alert('no data selected');
+    }
+}
+function validate(){
+$('#msgbx_err').hide();
+$('#name').blur(function() {
+var url= currentLocation + "/engine/chk_usr";
+          var name = $("#name").val();
+                   $.post(url, {code: name}, function(d) {
+                       if (d == 1)
+                       {
+                          //  alertify.alert();
+                       alertify.alert('Error!', 'La Categoria ya se encuentra registrada', function(){ alertify.success('Ok'); });
+                          // $('#msgbx_err').show();
+                          // $('#code').focus();
+                       }
+                       else
+                       {
+                           $('#msgbx_err').hide();
+                       }
+                   });
+               });
+}
+function detail_engine(id){
+  $('#form')[0].reset(); // reset form on modals
+  $('.form-group').removeClass('has-error'); // clear error class
+  $('.help-block').empty(); // clear error string
+  $('#modal_detail').modal('show'); // show bootstrap modal
+
+  //Ajax Load data from ajax
+
+  $.ajax({
+      url : currentLocation + "/engine/ajax_edit/" + id,
+      type: "GET",
+      dataType: "JSON",
+      success: function(data)
+      {
+          $('[name="id"]').val(data.id);
+          $('[name="nameEngine"]').val(data.name);
+          $('[name="type"]').val(data.type);
+         $('.modal-title').text('Movimientos del engineos'); // Set Title to Bootstrap modal title
+
+      },
+
+      error: function (jqXHR, textStatus, errorThrown)
+      {
+          alert('Error get data from ajax');
       }
-      </script>
+  });
+}
+<!--Fin Configuracion Combustible-->
+
+<!--Configuracion Combustible-->
+
+function save_fuel(){
+    save_method = 'add';
+    $('#form_fuel')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form_fuel').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Registro nuevo Tipo de Combustible'); // Set Title to Bootstrap modal title
+}
+function edit_fuel(id){
+    save_method = 'update';
+
+    $('#form_fuel')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    $.ajax({
+         //url: "<?php echo site_url('engine/ajax_edit_fuel')?>"/+id,
+       url : currentLocation + "/engine/ajax_edit_fuel/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="nameFuel"]').val(data.name);
+            $('#modal_form_fuel').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Editar Tipo de Combustible'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+
+}
+function reload_table(){
+    table.ajax.reload(null,false); //reload datatable ajax
+}
+function add_fuel(){
+
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+    var url;
+    if(save_method == 'add') {
+        url = currentLocation + "/engine/ajax_add_fuel/";
+    } else {
+        url = currentLocation + "/engine/ajax_update_fuel/";
+    }
+
+    var formData = new FormData($('#form_fuel')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status) //if success close modal and reload ajax table
+            {
+                $('#modal_form_fuel').modal('hide');
+                reload_table();
+            }
+            else
+            {
+                for (var i = 0; i < data.inputerror.length; i++)
+                {
+                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                }
+            }
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alertify.alert('Error!', 'Error al Guardar ó  Actualizar la Información, Posiblemente el Campo a Registrar ya Exista... Contacte al administrador....', function(){ alertify.success('Ok'); });
+
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        }
+
+    });
+
+}
+function delete_fuel(id){
+    if(confirm('Esta seguro de borrar esta información?'))
+    {
+        // ajax delete data to database
+        $.ajax({
+            url : currentLocation + "/engine/ajax_delete_fuel/"+id,
+            type: "POST",
+            dataType: "JSON",
+            success: function(data)
+            {
+                        $('#modal_form_fuel').modal('hide');
+                reload_table();
+            },
+          error: function (jqXHR, textStatus, errorThrown)
+            {
+                  alertify.alert('Error!', 'No es posible borar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+            }
+        });
+    }
+}
+function bulk_delete_fuel(){
+    var list_id = [];
+    $(".data-check:checked").each(function() {
+            list_id.push(this.value);
+    });
+    if(list_id.length > 0)
+    {
+        if(confirm('Are you sure delete this '+list_id.length+' data?'))
+        {
+            $.ajax({
+                type: "POST",
+                data: {id:list_id},
+                url: currentLocation + "/engine/ajax_bulk_delete_fuel",
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status)
+                    {
+                      reload_table();
+                    }
+                    else
+                    {
+                          alertify.alert('Error!', 'Error... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                      alertify.alert('Error!', 'Error al Eliminar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                }
+            });
+        }
+    }
+    else
+    {
+        alert('no data selected');
+    }
+}
+<!--Fin Configuracion Combustible-->
+
+<!--Configuracion Carga-->
+function save_load(){
+    save_method = 'add';
+    $('#form_load')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form_load').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Registro Nueva Capaciadad De Carga'); // Set Title to Bootstrap modal title
+}
+function edit_load(id){
+    save_method = 'update';
+
+    $('#form_load')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    $.ajax({
+         //url: "<?php echo site_url('engine/ajax_edit_load')?>"/+id,
+       url : currentLocation + "/engine/ajax_edit_load/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="nameload"]').val(data.name);
+            $('#modal_form_load').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Editar Tipo de Combustible'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+
+}
+function reload_table(){
+    table.ajax.reload(null,false); //reload datatable ajax
+}
+function add_load(){
+  validate();
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+    var url;
+    if(save_method == 'add') {
+        url = currentLocation + "/engine/ajax_add_load/";
+    } else {
+        url = currentLocation + "/engine/ajax_update_load/";
+    }
+
+    var formData = new FormData($('#form_load')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status) //if success close modal and reload ajax table
+            {
+                $('#modal_form_load').modal('hide');
+                reload_table();
+            }
+            else
+            {
+                for (var i = 0; i < data.inputerror.length; i++)
+                {
+                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                }
+            }
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alertify.alert('Error!', 'Error al Guardar ó  Actualizar la Información, Posiblemente el Campo a Registrar ya Exista... Contacte al administrador....', function(){ alertify.success('Ok'); });
+
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        }
+
+    });
+
+}
+function delete_load(id){
+    if(confirm('Esta seguro de borrar esta información?'))
+    {
+        // ajax delete data to database
+        $.ajax({
+            url : currentLocation + "/engine/ajax_delete_load/"+id,
+            type: "POST",
+            dataType: "JSON",
+            success: function(data)
+            {
+                        $('#modal_form_load').modal('hide');
+                reload_table();
+            },
+          error: function (jqXHR, textStatus, errorThrown)
+            {
+                  alertify.alert('Error!', 'No es posible borar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+            }
+        });
+    }
+}
+function bulk_delete_load(){
+    var list_id = [];
+    $(".data-check:checked").each(function() {
+            list_id.push(this.value);
+    });
+    if(list_id.length > 0)
+    {
+        if(confirm('Are you sure delete this '+list_id.length+' data?'))
+        {
+            $.ajax({
+                type: "POST",
+                data: {id:list_id},
+                url: currentLocation + "/engine/ajax_bulk_delete_load",
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status)
+                    {
+                      reload_table();
+                    }
+                    else
+                    {
+                          alertify.alert('Error!', 'Error... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                      alertify.alert('Error!', 'Error al Eliminar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                }
+            });
+        }
+    }
+    else
+    {
+        alert('no data selected');
+    }
+}
+<!--Fin Configuracion Carga-->
+
+<!--Configuracion Tipo Equipo-->
+
+function save_equipment(){
+    save_method = 'add';
+    $('#form_equipment')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form_equipment').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Registro nuevo Tipo De Equipo'); // Set Title to Bootstrap modal title
+}
+function edit_equipment(id){
+    save_method = 'update';
+
+    $('#form_equipment')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    $.ajax({
+         //url: "<?php echo site_url('engine/ajax_edit_equipment')?>"/+id,
+       url : currentLocation + "/engine/ajax_edit_equipment/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="nameType"]').val(data.name);
+            $('#modal_form_equipment').modal('show'); // show bootstrap modal when complete equipmented
+            $('.modal-title').text('Editar Tipo de Equipo'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+
+}
+function equipment_table(){
+    table.ajax.equipment(null,false); //reequipment datatable ajax
+}
+function add_equipment(){
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+    var url;
+    if(save_method == 'add') {
+        url = currentLocation + "/engine/ajax_add_equipment/";
+    } else {
+        url = currentLocation + "/engine/ajax_update_equipment/";
+    }
+
+    var formData = new FormData($('#form_equipment')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status) //if success close modal and reequipment ajax table
+            {
+                $('#modal_form_equipment').modal('hide');
+                reequipment_table();
+            }
+            else
+            {
+                for (var i = 0; i < data.inputerror.length; i++)
+                {
+                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                }
+            }
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alertify.alert('Error!', 'Error al Guardar ó  Actualizar la Información, Posiblemente el Campo a Registrar ya Exista... Contacte al administrador....', function(){ alertify.success('Ok'); });
+
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        }
+
+    });
+
+}
+function delete_equipmet(id){
+    if(confirm('Esta seguro de borrar esta información?'))
+    {
+        // ajax delete data to database
+        $.ajax({
+            url : currentLocation + "/engine/ajax_delete_equipment/"+id,
+            type: "POST",
+            dataType: "JSON",
+            success: function(data)
+            {
+                        $('#modal_form_equipment').modal('hide');
+                reequipment_table();
+            },
+          error: function (jqXHR, textStatus, errorThrown)
+            {
+                  alertify.alert('Error!', 'No es posible borar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+            }
+        });
+    }
+}
+function bulk_delete_equipment(){
+    var list_id = [];
+    $(".data-check:checked").each(function() {
+            list_id.push(this.value);
+    });
+    if(list_id.length > 0)
+    {
+        if(confirm('Are you sure delete this '+list_id.length+' data?'))
+        {
+            $.ajax({
+                type: "POST",
+                data: {id:list_id},
+                url: currentLocation + "/engine/ajax_bulk_delete_equipment",
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status)
+                    {
+                      reequipment_table();
+                    }
+                    else
+                    {
+                          alertify.alert('Error!', 'Error... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                      alertify.alert('Error!', 'Error al Eliminar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                }
+            });
+        }
+    }
+    else
+    {
+        alert('no data selected');
+    }
+}
+
+<!--Fin Configuracion tipo equipo-->
+
+<!--configuracion Mastil-->
+function save_mastil(){
+    save_method = 'add';
+    $('#form_mastil')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form_mastil').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Registro Nuevo Mastil'); // Set Title to Bootstrap modal title
+}
+function edit_mastil(id){
+    save_method = 'update';
+
+    $('#form_mastil')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    $.ajax({
+         //url: "<?php echo site_url('engine/ajax_edit_mastil')?>"/+id,
+       url : currentLocation + "/engine/ajax_edit_mastil/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="nameMastil"]').val(data.name);
+            $('#modal_form_mastil').modal('show'); // show bootstrap modal when complete mastiled
+            $('.modal-title').text('Editar Mastil'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+
+}
+function mastil_table(){
+    table.ajax.mastil(null,false); //remastil datatable ajax
+}
+function add_mastil(){
+  validate();
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+    var url;
+    if(save_method == 'add') {
+        url = currentLocation + "/engine/ajax_add_mastil/";
+    } else {
+        url = currentLocation + "/engine/ajax_update_mastil/";
+    }
+
+    var formData = new FormData($('#form_mastil')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status) //if success close modal and remastil ajax table
+            {
+                $('#modal_form_mastil').modal('hide');
+                remastil_table();
+            }
+            else
+            {
+                for (var i = 0; i < data.inputerror.length; i++)
+                {
+                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                }
+            }
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alertify.alert('Error!', 'Error al Guardar ó  Actualizar la Información, Posiblemente el Campo a Registrar ya Exista... Contacte al administrador....', function(){ alertify.success('Ok'); });
+
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        }
+
+    });
+
+}
+function delete_mastile(id){
+    if(confirm('Esta seguro de borrar esta información?'))
+    {
+        // ajax delete data to database
+        $.ajax({
+            url : currentLocation + "/engine/ajax_delete_mastil/"+id,
+            type: "POST",
+            dataType: "JSON",
+            success: function(data)
+            {
+                        $('#modal_form_mastil').modal('hide');
+                remastil_table();
+            },
+          error: function (jqXHR, textStatus, errorThrown)
+            {
+                  alertify.alert('Error!', 'No es posible borar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+            }
+        });
+    }
+}
+function bulk_delete_mastil(){
+    var list_id = [];
+    $(".data-check:checked").each(function() {
+            list_id.push(this.value);
+    });
+    if(list_id.length > 0)
+    {
+        if(confirm('Are you sure delete this '+list_id.length+' data?'))
+        {
+            $.ajax({
+                type: "POST",
+                data: {id:list_id},
+                url: currentLocation + "/engine/ajax_bulk_delete_mastil",
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status)
+                    {
+                      remastil_table();
+                    }
+                    else
+                    {
+                          alertify.alert('Error!', 'Error... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                      alertify.alert('Error!', 'Error al Eliminar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                }
+            });
+        }
+    }
+    else
+    {
+        alert('no data selected');
+    }
+}
+<!--Fin Configuracion Mastil-->
+
+<!--Configuracion Etapa-->
+function save_etapa(){
+    save_method = 'add';
+    $('#form_etapa')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form_etapa').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Registro Nueva Etapa'); // Set Title to Bootstrap modal title
+}
+function edit_etapa(id){
+    save_method = 'update';
+
+    $('#form_etapa')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    $.ajax({
+         //url: "<?php echo site_url('engine/ajax_edit_etapa')?>"/+id,
+       url : currentLocation + "/engine/ajax_edit_etapa/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="nameEtapa"]').val(data.name);
+            $('#modal_form_etapa').modal('show'); // show bootstrap modal when complete etapaed
+            $('.modal-title').text('Editar Nueva Etapa'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+
+}
+function etapa_table(){
+    table.ajax.etapa(null,false); //reetapa datatable ajax
+}
+function add_etapa(){
+
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+    var url;
+    if(save_method == 'add') {
+        url = currentLocation + "/engine/ajax_add_etapa/";
+    } else {
+        url = currentLocation + "/engine/ajax_update_etapa/";
+    }
+
+    var formData = new FormData($('#form_etapa')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status) //if success close modal and reetapa ajax table
+            {
+                $('#modal_form_etapa').modal('hide');
+                reetapa_table();
+            }
+            else
+            {
+                for (var i = 0; i < data.inputerror.length; i++)
+                {
+                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                }
+            }
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alertify.alert('Error!', 'Error al Guardar ó  Actualizar la Información, Posiblemente el Campo a Registrar ya Exista... Contacte al administrador....', function(){ alertify.success('Ok'); });
+
+            $('#btnSave').text('Grabar'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable
+        }
+
+    });
+
+}
+function delete_etapa(id){
+    if(confirm('Esta seguro de borrar esta información?'))
+    {
+        // ajax delete data to database
+        $.ajax({
+            url : currentLocation + "/engine/ajax_delete_etapa/"+id,
+            type: "POST",
+            dataType: "JSON",
+            success: function(data)
+            {
+                        $('#modal_form_etapa').modal('hide');
+                reetapa_table();
+            },
+          error: function (jqXHR, textStatus, errorThrown)
+            {
+                  alertify.alert('Error!', 'No es posible borar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+            }
+        });
+    }
+}
+function bulk_delete_etapa(){
+    var list_id = [];
+    $(".data-check:checked").each(function() {
+            list_id.push(this.value);
+    });
+    if(list_id.length > 0)
+    {
+        if(confirm('Are you sure delete this '+list_id.length+' data?'))
+        {
+            $.ajax({
+                type: "POST",
+                data: {id:list_id},
+                url: currentLocation + "/engine/ajax_bulk_delete_etapa",
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status)
+                    {
+                      reetapa_table();
+                    }
+                    else
+                    {
+                          alertify.alert('Error!', 'Error... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                      alertify.alert('Error!', 'Error al Eliminar la información... Contacte al administrador....', function(){ alertify.success('Ok'); });
+                }
+            });
+        }
+    }
+    else
+    {
+        alert('no data selected');
+    }
+}
+<!--Fin Configuracion Etapa-->
+</script>

@@ -116,8 +116,9 @@ echo '<option value="0">...Seleccionar La Serie...</option>';
         $row[] = $order->nameActivity;
         $row[] = $order->startActivity;
         $row[] = $order->state;
-          $row[] = '<a class="btn btn-primary btn-xs" href="javascript:void(0)" title="Editar" onclick="edit_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-pencil"></i> </a>
-            <a class="btn btn-danger btn-xs" href="javascript:void(0)" title="Eliminar" onclick="delete_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>';
+          $row[] = '<a  href="javascript:void(0)" title="Editar" onclick="edit_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-pencil"></i> </a>
+                    <a href="javascript:void(0)" title="Eliminar" onclick="delete_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>
+                    <a  href="javascript:void(0)" title="Imprimir" onclick="print_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-print"></i> </a>';
         $data[] = $row;
       }
 
@@ -188,8 +189,9 @@ $cod = $codigo + 1;
 
                                   );
                           $insert = $this->order->save($data);
-
                         echo json_encode(array("status" => TRUE));
+
+
                         }
       public function ajax_update()
                           {
@@ -205,6 +207,23 @@ $cod = $codigo + 1;
                             $this->order->update(array('id' => $this->input->post('id')), $data);
                             echo json_encode(array("status" => TRUE));
                           }
+
+
+
+                          public function ajax_print()
+                                              {
+
+                                                $data = array(
+                                                  'activity' => $this->input->post('activity'),
+                                                  'observation' => $this->input->post('observation'),
+                                                  'employee' => $this->input->post('employee'),
+                                                  'state' => $this->input->post('state'),
+                                                  'name' => $this->input->post('name'),
+                                                  'startActivity' => $this->input->post('startActivity'),
+                                                  );
+                                                $this->order->update(array('id' => $this->input->post('id')), $data);
+                                                echo json_encode(array("status" => TRUE));
+                                              }
 
 
 
@@ -257,6 +276,45 @@ $cod = $codigo + 1;
                             }
                           }
 
+
+                          public function descargar(){
+
+                            $data = [];
+
+                            $hoy = date("dmyhis");
+
+                                //load the view and saved it into $html variable
+                                $html =
+                                "<style>@page {
+                        			    margin-top: 0.5cm;
+                        			    margin-bottom: 0.5cm;
+                        			    margin-left: 0.5cm;
+                        			    margin-right: 0.5cm;
+                        			}
+                        			</style>".
+                                "<body>
+                                	<div style='color:#006699;'><b>".$this->input->post('customers')."<b></div>".
+                                		"<div style='width:50px; height:50px; background-color:red;'>asdf</div>
+
+                                </body>";
+
+                                // $html = $this->load->view('v_dpdf',$date,true);
+
+                            //$html="asdf";
+                                //this the the PDF filename that user will get to download
+                                $pdfFilePath = "cipdf_".$hoy.".pdf";
+
+                                //load mPDF library
+                                $this->load->library('M_pdf');
+                                $mpdf = new mPDF('c', 'A4-L');
+                            $mpdf->WriteHTML($html);
+                            $mpdf->Output($pdfFilePath, "D");
+                               // //generate the PDF from the given html
+                               //  $this->m_pdf->pdf->WriteHTML($html);
+
+                               //  //download it.
+                               //  $this->m_pdf->pdf->Output($pdfFilePath, "D");
+                          }
 
 
     }
