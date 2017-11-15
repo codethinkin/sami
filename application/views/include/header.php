@@ -141,9 +141,9 @@
                           <a href="<?php echo base_url();?>activityfrequency"> <i class="fa fa-circle-o"></i> <span>Actividad_Frecuencia</span></a>
                        </li>
                             <li><a href="<?php echo base_url();?>order"><i class="fa fa-circle-o"></i> Orden de Trabajo</a></li>
-                        <li><a href="<?php echo base_url('ventas'); ?> "><i class="fa fa-circle-o"></i> Consumos</a></li>
+                      <!--  <li><a href="<?php echo base_url('ventas'); ?> "><i class="fa fa-circle-o"></i> Consumos</a></li>
 
-                        <li><a href="<?php echo base_url('shopping'); ?>"><i class="fa fa-circle-o"></i> Compras</a></li>
+                        <li><a href="<?php echo base_url('shopping'); ?>"><i class="fa fa-circle-o"></i> Compras</a></li>-->
                         <!--<li class="treeview">
                           <a href="#">
                             <i class="fa fa-table"></i> <span>Reportes</span>

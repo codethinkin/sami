@@ -82,6 +82,19 @@ echo '<option value="0">...Seleccionar La Serie...</option>';
                       }
                   }
 
+                  function get_type_sections($id)
+                  {
+
+                    $equipox = $this->db->get_where('equipment' , array(
+                        'id' => $id
+                          ))->result_array();
+            echo '<option value="0">...Seleccionar La Equipo...</option>';
+                              foreach ($equipox as $row) {
+                                  echo '<option value="' . $row['id'] . '">' . $row['equipmentType'] . '</option>';
+
+                            }
+                        }
+
 
       public function BuscarCliente(){
        		$filtro    = $this->input->get("term");
@@ -118,7 +131,8 @@ echo '<option value="0">...Seleccionar La Serie...</option>';
         $row[] = $order->state;
           $row[] = '<a  href="javascript:void(0)" title="Editar" onclick="edit_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-pencil"></i> </a>
                     <a href="javascript:void(0)" title="Eliminar" onclick="delete_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>
-                    <a  href="javascript:void(0)" title="Imprimir" onclick="print_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-print"></i> </a>';
+                    <a  href="http://localhost:81/sami/order/pdf_order/'."$order->id".'" title="Imprimir" ><i class="glyphicon glyphicon-print"></i> </a>
+                    <a   href="javascript:void(0)" title="Liquidar" onclick="print_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-usd"></i> </a>';
         $data[] = $row;
       }
 
@@ -142,13 +156,12 @@ echo '<option value="0">...Seleccionar La Serie...</option>';
                         }
                     }
                 }
-                    public function ajax_edit($id)
-                    {
-                      $data = $this->order->get_by_id($id);
-                      echo json_encode($data);
-                    }
+public function ajax_edit($id){
+        $data = $this->order->get_by_id($id);
+        echo json_encode($data);
+}
 
-      public function ajax_add()
+public function ajax_add()
 
                         {
                           $this->db->select_max('code');
@@ -163,17 +176,15 @@ $cod = $codigo + 1;
 
                           $this->_validate();
                           $states = 1;
-
+if($this->input->post('frequency')== NULL){
+$escape = 5;
+}else{
+$escape = $this->input->post('frequency');
+}
                           $code  = $query;
                           $data  = array(
-                                            /*'nit' => $this->input->post('nit'),
-                                            'name' => $this->input->post('name'),
-                                            'contact' => $this->input->post('contact'),
-                                            'address' => $this->input->post('address'),
-                                            'phone1' => $this->input->post('phone1'),
-                                            'phone2' => $this->input->post('phone2'),
-                                            'email' => $this->input->post('email'),
-                                            'status' => $states,*/
+                                            'autorized' => $this->input->post('autorized'),
+                                            'frequency' => $escape,
                                             'activity' => $this->input->post('activity'),
                                             'observation' => $this->input->post('observation'),
                                             'employee' => $this->input->post('employee'),
@@ -184,15 +195,35 @@ $cod = $codigo + 1;
                                             'model' => $this->input->post('model'),
                                             'serie' => $this->input->post('serie'),
                                             'codigo' => $this->input->post('codigo'),
+                                            'cotizacion' => $this->input->post('cotizacion'),
+                                            'sdc' => $this->input->post('sdc'),
+                                            'capex' => $this->input->post('capex'),
+                                            'ordencompra' => $this->input->post('ordencompra'),
+
                                             'code' => $cod
-
-
                                   );
                           $insert = $this->order->save($data);
                         echo json_encode(array("status" => TRUE));
 
 
                         }
+
+
+                        public function ajax_add_liq()
+
+                                                {
+
+                                                  $datos  = array(
+                                                                    'detalle' => $this->input->post('detalle',TRUE),
+                                                                    'code' => $this->input->post('code',TRUE),
+                                                                    'customers' => $this->input->post('name',TRUE)
+                                                                );
+                                                  $guardar = $this->order->save_liq($datos);
+  echo json_encode(array("status" => TRUE));
+
+
+
+                                                }
       public function ajax_update()
                           {
                             $this->_validate();
@@ -203,6 +234,12 @@ $cod = $codigo + 1;
                               'state' => $this->input->post('state'),
                               'name' => $this->input->post('name'),
                               'startActivity' => $this->input->post('startActivity'),
+                              'autorized' => $this->input->post('autorized'),
+                              'cotizacion' => $this->input->post('cotizacion'),
+                              'sdc' => $this->input->post('sdc'),
+                              'capex' => $this->input->post('capex'),
+                              'ordencompra' => $this->input->post('ordencompra'),
+'startActivity' => $this->input->post('startActivity'),
                               );
                             $this->order->update(array('id' => $this->input->post('id')), $data);
                             echo json_encode(array("status" => TRUE));
@@ -210,7 +247,7 @@ $cod = $codigo + 1;
 
 
 
-                          public function ajax_print()
+                          public function ajax_liquidar()
                                               {
 
                                                 $data = array(
@@ -277,44 +314,143 @@ $cod = $codigo + 1;
                           }
 
 
-                          public function descargar(){
 
-                            $data = [];
 
-                            $hoy = date("dmyhis");
+/*
+public function pdf()
+{
+  //load mPDF library
+  $this->load->library('M_pdf');
+  //load mPDF library
 
-                                //load the view and saved it into $html variable
-                                $html =
-                                "<style>@page {
-                        			    margin-top: 0.5cm;
-                        			    margin-bottom: 0.5cm;
-                        			    margin-left: 0.5cm;
-                        			    margin-right: 0.5cm;
-                        			}
-                        			</style>".
-                                "<body>
-                                	<div style='color:#006699;'><b>".$this->input->post('customers')."<b></div>".
-                                		"<div style='width:50px; height:50px; background-color:red;'>asdf</div>
 
-                                </body>";
+  //now pass the data//
+   $this->data['title']="MY PDF TITLE 1.";
+   $this->data['description']="";
+   $this->data['description']=$this->official_copies;
+   //now pass the data //
 
-                                // $html = $this->load->view('v_dpdf',$date,true);
 
-                            //$html="asdf";
-                                //this the the PDF filename that user will get to download
-                                $pdfFilePath = "cipdf_".$hoy.".pdf";
+  $html=$this->load->view('pdf',$this->data, true); //load the pdf_output.php by passing our data and get all data in $html varriable.
 
-                                //load mPDF library
-                                $this->load->library('M_pdf');
-                                $mpdf = new mPDF('c', 'A4-L');
-                            $mpdf->WriteHTML($html);
-                            $mpdf->Output($pdfFilePath, "D");
-                               // //generate the PDF from the given html
-                               //  $this->m_pdf->pdf->WriteHTML($html);
+  //this the the PDF filename that user will get to download
+  $pdfFilePath ="OrdenTrabajo.pdf";
 
-                               //  //download it.
-                               //  $this->m_pdf->pdf->Output($pdfFilePath, "D");
-                          }
+
+  //actually, you can pass mPDF parameter on this load() function
+  $pdf = $this->m_pdf->load();
+
+
+  $css = file_get_contents('http://localhost:81/sami/assets/css/pdf.css');
+
+  $pdf->WriteHTML($css,1);
+
+
+  //generate the PDF!
+  $pdf->WriteHTML($html,2);
+  //offer it to user via browser download! (The PDF won't be saved on your server HDD)
+  $pdf->Output($pdfFilePath, "D");
+}
+*/
+
+public function pdf_blanco()
+    {
+        //Carga la librería que agregamos
+        $this->load->library('mydompdf');
+        //$saludo será una variable dentro la vista
+        $data["saludo"] = "Hola mundo!";
+        //$html tendrá el contenido de la vista
+        $html           = $this->load->view('pdf_blanco', $data, true);
+        /*
+         * load_html carga en dompdf la vista
+         * render genera el pdf
+         * stream ("nombreDelDocumento.pdf", Attachment: true | false)
+         * true = forza a descargar el pdf
+         * false = genera el pdf dentro del navegador
+         */
+        $this->mydompdf->load_html($html);
+        $this->mydompdf->render();
+        $this->mydompdf->stream("welcome.pdf", array(
+            "Attachment" => false
+        ));
+    }
+
+    function pdf_order($id)
+    {
+
+        $this->load->library('mydompdf');
+        $this->load->model('Order_model');
+        $row = $this->Order_model->get_by_id_order($id);
+        $base = $this->Order_model->get_by_order($id);
+
+        $data = array(
+      'id' 					          => $row->id,
+      'code' 				          => $row->code,
+      'autorized' 				    => $row->autorized,
+      'startActivity' 				=> $row->startActivity,
+      'frequency' 				    => $row->frequency,
+      'nit' 				          => $row->nit,
+      'activity' 				      => $row->activity,
+      'customers'             => $row->customers,
+      'observation'           => $row->observation,
+      'mark'                  => $row->mark,
+      'model'                 => $row->model,
+      'serie'                 => $row->serie,
+      'equipmentType'         => $row->equipmentType,
+      'activityFrequency'     => $row->activityFrequency,
+      'sdc'                   => $row->sdc,
+      'ordencompra'           => $row->ordencompra,
+      'cotizacion'            => $row->cotizacion,
+      'capex'                 => $row->capex,
+      'base'                  => $this->Order_model->get_by_order($id)
+
+);
+
+       //$data['code'] = 12121;
+        $html = $this->load->view('header_footer', $data, true);
+        $this->mydompdf->load_html($html);
+        $this->mydompdf->render();
+            //Así se agrega css a la vista que queremos renderizar
+            //En la vista hay que agregarlo con link en el head del documento html
+        $this->mydompdf->set_base_path('./assets/css/dompdf.css'); //agregar de nuevo el css
+        $this->mydompdf->stream("OrdenDeTrabajo.pdf", array(
+            "Attachment" => false
+        ));
+    }
+
+function liq(){
+
+  $data  = array(
+
+                    'customers' => $this->input->post('name'),
+                    'precio' => $this->input->post('precio'),
+                    'detalle' => $this->input->post('detalle'),
+                    'code' => $this->input->post('codigo'),
+          );
+  $insert = $this->order->save_liq($data);
+  echo json_encode(array("status" => TRUE));
+
+
+}
+
+
+public function save_liq()
+
+                        {
+                          $data  = array(
+                                          'detalle' => $this->input->post('detalle'),
+                                            'precio' => $this->input->post('precio'),
+                                            'customers' => $this->input->post('name'),
+                                            'code' => $this->input->post('code'),
+                                  );
+                          $insert = $this->order->save_liq($data);
+                        echo json_encode(array("status" => TRUE));
+
+
+                        }
+
+
+
 
 
     }

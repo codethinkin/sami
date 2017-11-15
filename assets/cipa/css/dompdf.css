@@ -1,0 +1,88 @@
+body{font-family: Helvetica; font-size: 12px;}
+@page { margin-top: 100px; margin-left: 80px; margin-right: 25px; margin-bottom: 60px;}
+header { position: fixed; top: -90px; left: 0px; right: 0px; height: 70px; }
+footer { position: fixed; bottom: -60px; left: 0px; right: 0px; border-top: 3px solid #333; background-color: transparent; height: 50px; }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#firmas{
+	color: #5D6975;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #C1CED9;
+  padding: 50px 0;
+  text-align: right;
+}
+
+#project {
+  float: left;
+margin-top: 10px;
+margin-bottom: 2px;
+}
+
+#project span {
+  color: #5D6975;
+  text-align: right;
+  width: 80px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+
+#header_logo{background: transparent; width: 150px; text-align: left;}
+#logo{width: 150px;}
+#header_texto{text-align: left; font-size:9px; background: transparent; width: 150px;}
+#header_orden{text-align: center; font-size:9px; background: transparent; width: 150px;}
+#header_logos{background: transparent; text-align: center; width:230px;}
+#logo1, #logo2{width: 50px;}
+
+#footer_texto{text-align: center; font-size: 9px; }
+
+#texto_main{margin-top: 25px; text-align: justify;}
+
+#table_info{width: 100%;}
+hr{
+margin: auto;
+margin-top: 5px;
+margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+#contenido{
+border: 1px solid #787878;
+
+}
+#firma_alin{
+text-align: left;
+}
+
+table tr:nth-child(2n-1) td {
+  background: #F1F1F1;
+}
+
+table th,
+table td {
+  text-align: center;
+
+}
+
+table th {
+  padding: 5px 20px;
+  color: #5D6975;
+  border-bottom: 1px solid #C1CED9;
+  white-space: nowrap;
+  font-weight: normal;
+}

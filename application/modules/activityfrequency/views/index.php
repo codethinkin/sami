@@ -11,10 +11,10 @@
       <div class="col-xs-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Tablero | Sub-Categorias  </h3>
+            <h3 class="box-title">Tablero | Actividad Por Frecuencia </h3>
             <div class="box-tools">
 
- <button class="btn btn-primary btn-xs" onclick="add_activityfrequency()"><i class="glyphicon glyphicon-plus"></i> Nueva Sub-Categoria</button>
+ <button class="btn btn-primary btn-xs" onclick="add_activityfrequency()"><i class="glyphicon glyphicon-plus"></i> Nueva Actividad</button>
 
                   <button class="btn btn-default btn-xs" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Recargar</button>
             </div>

@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Order_model extends CI_Model{
 
       var $table = 'order';
+var $table2 = 'order_has_order';
       var $column_order = array(null,'nameCus','activity','startActivity', 'code', 'nit',null); //set column field database for datatable orderable
       var $column_search = array('activity','startActivity', 'code', 'nit'); //set column field database for datatable searchable just firstname , lastname , address are searchable
       var $order = array('id' => 'desc'); // default order
@@ -175,6 +176,43 @@ function count_filtered(){
         $this->db->where('id', $id);
         $this->db->delete($this->table);
       }
+
+      function get_by_id_order($id)
+       {
+           $this->db->select('o.id, o.nit, o.startActivity, o.sdc, o.cotizacion, o.capex, o.ordencompra, o.code, a.nameActivity AS activity, concat((c.nameCus),(" - "),(c.nit))As customers,
+                              c.id, e.mark, e.model, e.serie, e.equipmentType, o.autorized, q.nameFrequency AS frequency, o.observation, f.activityFrequency');
+          $this->db->from('order o');
+          $this->db->join('activity a', 'a.id = o.activity');
+          $this->db->join('customers c', 'c.id = o.name');
+          $this->db->join('equipment e', 'e.id = o.mark');
+          $this->db->join('frequency q', 'q.id = o.frequency');
+          $this->db->join('activity_frequency f', 'f.frequency = o.frequency');
+      //    $this->db->join('sector r', 'r.id = a.sector');
+      //    $this->db->join('employee e', 'e.id = a.employee');
+      //    $this->db->join('origin o', 'o.id = a.origin');
+          //$this->db->join('activity v', 'a.id = v.accounts');
+          //$this->db->join('comments c', 'a.id = c.accounts');
+      //    $this->db->where('a.type', '0');
+          $this->db->where('o.id',$id);
+          return $this->db->get()->row();
+
+       }
+
+function get_by_order($id){
+  $this->db->select('o.id,  f.activityFrequency');
+ $this->db->from('order o');
+ $this->db->join('activity_frequency f', 'f.frequency = o.frequency');
+ $this->db->where('o.id',$id);
+ $query = $this->db->get();
+    return $query->result();
+}
+
+
+public function save_liq($datos)
+{
+  $this->db->insert_batch($this->table2, $datos);
+  return $this->db->insert_id();
+}
 
 
 

@@ -71,7 +71,7 @@
                         <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
                         <div class="form-group">
                           <label class="control-label col-md-3">Cliente</label>
-                            <div class="col-md-9">
+                            <div class="col-md-8">
                               <select name="name" class="form-control input-sm" data-validate="required" id="customers"
                                         onchange="return get_equipment_sections(this.value)" required>
                                           <option value="">Seleccione</option>
@@ -103,7 +103,6 @@
           <span class="help-block"></span><span id="name_result"></span>
       </div>
   </div>
-
 
 
                           <div class="form-group" id="dvmodel">
@@ -139,6 +138,7 @@
     <label class="control-label col-md-6">Serie</label>
       <div class="col-md-6">
         <select name="serie" id="serie_selector_holder" class="form-control input-sm"
+onchange="return get_type_sections(this.value)"
           >
                   <option value=""></option>
         </select>
@@ -149,17 +149,34 @@
   </div>
 </div>
 
+<div class="col-md-6">
+  <div class="form-group" id="dvtype">
+    <label class="control-label col-md-6">Tipo</label>
+      <div class="col-md-6">
+        <select name="equipmentType" id="type_selector_holder" class="form-control input-sm"
+                          >
+                  <option value=""></option>
+        </select>
+          <span class="help-block"></span><span id="name_result"></span>
+      </div>
+  </div>
+</div>
+
+
+<div class="col-md-6">
+  <div class="form-group">
+      <label class="control-label col-md-6" id="lblState">Fecha</label>
+      <div class="col-md-6">
+      <input type="date" class="form-control input-sm" name="startActivity" id="startActivity" value="">
+          <span class="help-block"></span>
+      </div>
+  </div>
+
+</div>
 
 
 
 
-                        <div class="form-group">
-                            <label class="control-label col-md-3" id="lblState">Fecha</label>
-                            <div class="col-md-5">
-                            <input type="date" class="form-control input-sm" name="startActivity" id="startActivity" value="">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
                         <div class="form-group">
                           <label class="control-label col-md-3">Tipo de Actividad</label>
                             <div class="col-md-5">
@@ -222,6 +239,53 @@
                                 <span class="help-block"></span><span id="name_result"></span>
                             </div>
                         </div>
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+      <label class="control-label col-md-6" id="lblState">Cotizacion No:</label>
+      <div class="col-md-6">
+    <input type="text" name="cotizacion" class="form-control input-sm">
+          <span class="help-block"></span>
+      </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+      <label class="control-label col-md-6" id="lblState">Orden Compra</label>
+      <div class="col-md-5">
+    <input type="text" name="ordencompra" class="form-control input-sm">
+          <span class="help-block"></span>
+      </div>
+  </div>
+</div>
+
+</div>
+
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+      <label class="control-label col-md-6" id="lblState">SDC No:</label>
+      <div class="col-md-6">
+    <input type="text" name="sdc" class="form-control input-sm">
+          <span class="help-block"></span>
+      </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+      <label class="control-label col-md-6" id="lblState">CAPEX No.</label>
+      <div class="col-md-5">
+    <input type="text" name="capex" class="form-control input-sm">
+          <span class="help-block"></span>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
 
                         <div class="form-group">
                             <label class="control-label col-md-3" id="lblState">Observación</label>
@@ -230,10 +294,17 @@
                                 <span class="help-block"></span>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" id="lblState">Autorizado Por</label>
+                            <div class="col-md-7">
+                          <input type="text" name="autorized" class="form-control input-sm">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-3" id="lblState">Estado</label>
-                            <div class="col-md-9">
+                            <div class="col-md-7">
                                 <select name="state" id="state" class="form-control input-sm">
                                     <option value="">--Selecionar Estado--</option>
                                     <option value="ANULADO">ANULADO</option>
@@ -266,17 +337,77 @@
                 <h3 class="modal-title">Person Form</h3>
             </div>
             <div class="modal-body form">
-                <form action="<?php echo base_url('order/descargar'); ?>" id="form" class="form-horizontal">
-                <input type="hidden" value="" name="id"/>
-                    <div class="form-body">
-                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
-                          <input type="text" name="customers" value="">
+                <form action="<?php echo base_url('order/ajax_add_liq'); ?>" id="form_print" class="form-horizontal">
+                <input type="hidden" value="" name="id" id="id"/>
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+    <label class="control-label col-md-4">Orden No.</label>
+      <div class="col-md-5">
+        <input type="text" name="code" id="code" class="form-control input-sm" >
+          <span class="help-block"></span><span id="name_result"></span>
+      </div>
+  </div>
+</div>
 
-            </div>
+<div class="col-md-6">
+  <div class="form-group">
+    <label class="control-label col-md-3">Cliente</label>
+      <div class="col-md-8">
+        <select name="name" class="form-control input-sm" data-validate="required" id="name"
+                  onchange="return get_equipment_sections(this.value)" required>
+                    <option value="">Seleccione</option>
+                         <?php
+                           $classes = $this->db->get('customers')->result_array();
+                           foreach($classes as $row):
+                             ?>
+                             <option value="<?php echo $row['id'];?>">
+                               <?php echo $row['nameCus'];?>
+                             </option>
+                             <?php
+                             endforeach;
+                             ?>
+    </select>
+          <span class="help-block"></span><span id="name_result"></span>
+      </div>
+  </div>
+</div>
+</div>
+
+    <input type="button" class="btn btn-lg btn-block btn-primary btn-md " id="addrow" value="Nuevo Item" />
+<span id="total_sum_value">Total:</span>
+    <table id="myTable" class=" table order-list">
+    <thead>
+        <tr>
+            <td>DETALLE</td>
+            <td>PRECIO</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col-sm-8">
+                <input type="text" name="detalleold" id="detalleold" class="form-control input-sm" />
+            </td>
+          <td class="col-sm-3">
+                <input type="text" name="precioold" id="precioold"  class="form-control input-sm precio"/>
+            </td>
+            <td class="col-sm-2"><a class="Borrar"></a>
+
+            </td>
+        </tr>
+
+    </tbody>
+    <tfoot>
+
+        <tr>
+        </tr>
+    </tfoot>
+</table>
             <div class="modal-footer">
-                <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary btn-xs">Imprimir</button>
+              <button type="button" id="btnSave_liq" onclick="save_liq()" class="btn btn-primary btn-xs">Grabar</button>
 
             </div>
+</form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -285,6 +416,7 @@
 <script>
 var currentLocation = window.location;
 var table;
+var counter = 0;
 
 
 
@@ -301,17 +433,21 @@ $(document).ready(function() {
 
 
 
+
+
 $('#frequency').hide();
 $('#dvequip').hide();
 $('#dvmark').hide();
 $('#dvserie').hide();
 $('#dvmodel').hide();
+$('#dvtype').hide();
 
 $("#customers").change(function(){
 $('#dvequip').show();
 $('#dvmark').show();
 $('#dvserie').show();
 $('#dvmodel').show();
+$('#dvtype').show();
 });
 
 
@@ -405,6 +541,55 @@ validate();
 
       });
 
+/**Agregar filass liquidacion**/
+
+$("#addrow").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td><input type="text" class="form-control input-sm  " name="detalleold' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control input-sm precio" name="precioold' + counter + '"/></td>';
+
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Borrar"></td>';
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+    $("table.order-list").on('input', '.precio', function () {
+           var calculated_total_sum = 0;
+
+           $("table.order-list .precio").each(function () {
+               var get_textbox_value = $(this).val();
+               if ($.isNumeric(get_textbox_value)) {
+                  calculated_total_sum += parseFloat(get_textbox_value);
+                  }
+                });
+                  $("#total_sum_value").html(calculated_total_sum);
+           });
+
+
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();
+        counter -= 1
+    });
+
+
+
+function calculateRow(row) {
+    var price = +row.find('input[name^="price"]').val();
+
+}
+
+function calculateGrandTotal() {
+    var grandTotal = 0;
+    $("table.order-list").find('input[name^="price"]').each(function () {
+        grandTotal += +$(this).val();
+    });
+    $("#grandtotal").text(grandTotal.toFixed(2));
+}
+
 
 
 function add_order(){
@@ -415,6 +600,16 @@ function add_order(){
     $('.help-block').empty(); // clear error string
     $('#modal_form').modal('show'); // show bootstrap modal
     $('.modal-title').text('Registro de Nueva Orden de Trabajo'); // Set Title to Bootstrap modal title
+}
+
+function add_liq(){
+    save_method = 'add';
+
+    $('#form_print')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_print_form').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Liquidacion de Orden de Trabajo'); // Set Title to Bootstrap modal title
 }
 
 function edit_order(id)
@@ -440,9 +635,9 @@ function edit_order(id)
             $('[name="activity"]').val(data.activity);
             $('[name="employee"]').val(data.employee);
             $('[name="observation"]').val(data.observation);
-          /*  $('[name="nit"]').val(data.nit);
-            $('[name="name"]').val(data.name);
-            $('[name="contact"]').val(data.contact);
+            $('[name="autorized"]').val(data.autorized);
+            $('[name="startActivity"]').val(data.startActivity);
+          /*  $('[name="contact"]').val(data.contact);
             $('[name="phone1"]').val(data.phone1);
             $('[name="phone2"]').val(data.phone2);
             $('[name="address"]').val(data.address);
@@ -462,9 +657,9 @@ function edit_order(id)
 
 function print_order(id)
 {
-  //  save_method = 'update';
+   save_method = 'update';
 
-    $('#form')[0].reset(); // reset form on modals
+    $('#form_print')[0].reset(); // reset form on modals
     $('.form-group').removeClass('has-error'); // clear error class
     $('.help-block').empty(); // clear error string
 
@@ -472,7 +667,7 @@ function print_order(id)
 
     $.ajax({
          //url: "<?php echo site_url('order/ajax_print')?>"/+id,
-       url : currentLocation + "/order/ajax_print/"+id,
+       url : currentLocation + "/order/ajax_edit/"+id,
         type: "GET",
         dataType: "JSON",
         success: function(data)
@@ -484,16 +679,9 @@ function print_order(id)
             $('[name="employee"]').val(data.employee);
             $('[name="observation"]').val(data.observation);
             $('[name="code"]').val(data.code);
-          /*  $('[name="nit"]').val(data.nit);
-            $('[name="name"]').val(data.name);
-            $('[name="contact"]').val(data.contact);
-            $('[name="phone1"]').val(data.phone1);
-            $('[name="phone2"]').val(data.phone2);
-            $('[name="address"]').val(data.address);
-            $('[name="email"]').val(data.email);*/
             $('[name="state"]').val(data.state);
             $('#modal_print_form').modal('show'); // show bootstrap modal when complete loaded
-            $('.modal-title').text('Imprimir Orden'); // Set title to Bootstrap modal title
+            $('.modal-title').text('Liquidar Orden de Trabajo'); // Set title to Bootstrap modal title
         },
 
         error: function (jqXHR, textStatus, errorThrown)
@@ -503,6 +691,54 @@ function print_order(id)
     });
 
 }
+
+function save_liq()
+{
+
+      $('#btnSave_liq').text('saving...'); //change button text
+      $('#btnSave_liq').attr('disabled',true); //set button disable
+      var url;
+
+          url = currentLocation + "/order/ajax_add_liq/";
+
+
+      var formData = new FormData($('#form_print')[0]);
+      $.ajax({
+          url : url,
+          type: "POST",
+          data: formData,
+          contentType: false,
+          processData: false,
+          dataType: "JSON",
+          success: function(data)
+          {
+              if(data.status) //if success close modal and reload ajax table
+              {
+                  $('#modal_print_form').modal('hide');
+                  reload_table();
+              }
+              else
+              {
+                  for (var i = 0; i < data.inputerror.length; i++)
+                  {
+                      $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                      $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                  }
+              }
+              $('#btnSave_liq').text('Grabar'); //change button text
+              $('#btnSave_liq').attr('disabled',false); //set button enable
+          },
+          error: function (jqXHR, textStatus, errorThrown)
+          {
+              alert('Error al Guardar ó  Actualizar la Información');
+              $('#btnSave_liq').text('Grabar'); //change button text
+              $('#btnSave_liq').attr('disabled',false); //set button enable
+          }
+
+      });
+
+}
+
 
 
 
@@ -559,6 +795,10 @@ function save()
     });
 
 }
+
+
+
+
 
 
 function delete_order(id)
@@ -629,7 +869,7 @@ function validate(){
         var email_val = $("#nit").val();
         if(email_val){
             $('#msgbx_err').show();
-            $.post("http://localhost:81/sami/order/nit_check_order", {
+            $.post("http://apphoruscloud.com/sami/order/nit_check_order", {
                 nit: email_val
             }, function(response){
                 $('#loading').hide();
@@ -662,10 +902,10 @@ function detail_order(id)
         $('[name="activity"]').val(data.activity);
         $('[name="employee"]').val(data.employee);
         $('[name="observation"]').val(data.observation);
-      /*  $('[name="nit"]').val(data.nit);
-        $('[name="name"]').val(data.name);
-        $('[name="contact"]').val(data.contact);
-        $('[name="phone1"]').val(data.phone1);
+        $('[name="sdc"]').val(data.sdc);
+        $('[name="ordencompra"]').val(data.ordencompra);
+        $('[name="cotizacion"]').val(data.cotizacion);
+        /*  $('[name="capex"]').val(data.capex);
         $('[name="phone2"]').val(data.phone2);
         $('[name="address"]').val(data.address);
         $('[name="email"]').val(data.email);*/
@@ -739,6 +979,20 @@ var id = $("#equipment_selector_holder").val();
 
             };
 
+            function get_type_sections() {
+
+            var id = $("#equipment_selector_holder").val();
+
+             $.ajax({
+                      url: '<?php echo base_url();?>order/get_type_sections/' + id ,
+                      success: function(response)
+                      {
+
+                          jQuery('#type_selector_holder').html(response);
+                      }
+                  });
+
+                };
 
 
 

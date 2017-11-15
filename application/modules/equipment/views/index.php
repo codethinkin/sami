@@ -101,7 +101,7 @@
                                                  $classes = $this->db->get('equipmentType')->result_array();
                                                  foreach($classes as $row):
                                                    ?>
-                                                   <option value="<?php echo $row['id'];?>">
+                                                   <option value="<?php echo $row['nameType'];?>">
                                                      <?php echo $row['nameType'];?>
                                                    </option>
                                                    <?php

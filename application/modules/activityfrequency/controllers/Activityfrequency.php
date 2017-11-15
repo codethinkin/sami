@@ -77,27 +77,25 @@ if(isset($_POST))
                   echo json_encode($data);
                 }
 
-  public function ajax_add()
 
-                    {
-                      $this->_validate();
-                      $states = "Activo";
-                      $data = array(
-                                        'frequency'      => $this->input->post('frequency'),
-                                        'activityFrequency'  => $this->input->post('activityFrequency'),
-                                        'state'     => $states,
+                public function ajax_add()
+                                  {
+                                                  $this->_validate();
 
-                              );
+                $states = "Activo";
+                                    $data = array(
 
-                              $name = $_POST['frequency'];
-                              $cat= $this->activityfrequency->usrchk($name);
-                                if($cat ==1){
-                                    $this->output->set_content_type('application/json')->set_output(json_encode(array('message' => 'La categoria  ya se encuentra registrada..')));
-                                }else{
-                      $insert = $this->activityfrequency->save($data);
-                    echo json_encode(array("status" => TRUE));
+                                      'frequency'      => $this->input->post('frequency'),
+                                      'activityFrequency'  => $this->input->post('activityFrequency'),
+                                      'state'     => $states,
+                                            );
+                                    $insert = $this->activityfrequency->save($data);
+
+
+
+                  echo json_encode(array("status" => TRUE));
+
 }
-                    }
 
   public function ajax_update()
                       {
