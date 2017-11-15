@@ -197,7 +197,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <th colspan="6" class="fondo">DESCRIPCIÓN DEL SERVICIO Y REPUESTOS NECESARIOS</th>
+      <th colspan="6" class="fondo">ACTIVIDADES ADICIONALES REALIZADAS</th>
       </tr>
     <tr>
       <th colspan="4" class="descripcion">&nbsp;</th>
@@ -226,10 +226,8 @@
       <th >&nbsp;</th>
     </tr>
     <tr>
-      <th colspan="4" >&nbsp;</th>
-      <th  >&nbsp;</th>
-      <th >&nbsp;</th>
-    </tr>
+      <th colspan="6" class="fondo">PENDIENTES POR REALIZAR</th>
+      </tr>
     <tr>
       <th colspan="4" >&nbsp;</th>
       <th  >&nbsp;</th>
@@ -320,7 +318,7 @@
 <td>* FILTRO MOTOR</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>* CORAZA ALTERNADOR</td>
+      <td>* TAPA DISTRIBUIDOR</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -328,7 +326,7 @@
         <td>* FILTRO AIRE</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>* ACEITE HIDRAULICO</td>
+        <td>* FILTRO CAJA</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -336,7 +334,7 @@
     <td>* LUBRICANTE CADENA</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>* FILTRO HIDRAULICO</td>
+      <td>* FILTRO DIFERENCIAL</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -344,7 +342,7 @@
       <td>* GRASA</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>* ROTOR DISTRIBUIDOR</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -352,7 +350,7 @@
       <td>* FILTRO GASOLINA</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -360,7 +358,7 @@
       <td>* FILTRO GLP</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -405,7 +403,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <th colspan="6" class="fondo">DESCRIPCIÓN DEL SERVICIO Y REPUESTOS NECESARIOS</th>
+      <th colspan="6" class="fondo">ACTIVIDADES ADICIONALES REALIZADAS</th>
       </tr>
     <tr>
       <th colspan="4" class="descripcion">&nbsp;</th>
@@ -434,10 +432,8 @@
       <th >&nbsp;</th>
     </tr>
     <tr>
-      <th colspan="4" >&nbsp;</th>
-      <th  >&nbsp;</th>
-      <th >&nbsp;</th>
-    </tr>
+      <th colspan="6" class="fondo">PENDIENTES POR REALIZAR</th>
+      </tr>
     <tr>
       <th colspan="4" >&nbsp;</th>
       <th  >&nbsp;</th>
@@ -518,8 +514,64 @@
     </tr>
     </thead>
     <tbody>
+<tr>
+      <td>* ACEITE MOTOR</td>
+      <td></td>
+      <td></td>
+     <td>* LIMPIADOR CARBURADOR</td>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
-      <td>2500</td>
+<td>* FILTRO MOTOR</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>* TAPA DISTRIBUIDOR</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>* FILTRO AIRE</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+        <td>* FILTRO CAJA</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>* LUBRICANTE CADENA</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>* FILTRO DIFERENCIAL</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>* GRASA</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>* ROTOR DISTRIBUIDOR</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>* FILTRO GASOLINA</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>* ACEITE HIDRÁULICO</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>* FILTRO GLP</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>* FILTRO HIDRÁULICO</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>* ACEITE DIFERENCIAL</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -527,15 +579,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
+      <td>* ACEITE CAJA</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -543,15 +587,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
+      <td>* LIQUIDO DE FRENOS</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -559,15 +595,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
+      <td>* CABLES DE ALTA</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -575,15 +603,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
+      <td>* JUEGO DE BUJIAS</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -591,31 +611,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <th colspan="6" class="fondo">DESCRIPCIÓN DEL SERVICIO Y REPUESTOS NECESARIOS</th>
+      <th colspan="6" class="fondo">ACTIVIDADES ADICIONALES REALIZADAS</th>
       </tr>
     <tr>
       <th colspan="4" class="descripcion">&nbsp;</th>
@@ -644,10 +640,8 @@
       <th >&nbsp;</th>
     </tr>
     <tr>
-      <th colspan="4" >&nbsp;</th>
-      <th  >&nbsp;</th>
-      <th >&nbsp;</th>
-    </tr>
+      <th colspan="6" class="fondo">PENDIENTES POR REALIZAR</th>
+      </tr>
     <tr>
       <th colspan="4" >&nbsp;</th>
       <th  >&nbsp;</th>
