@@ -129,10 +129,12 @@ echo '<option value="0">...Seleccionar La Serie...</option>';
         $row[] = $order->nameActivity;
         $row[] = $order->startActivity;
         $row[] = $order->state;
-          $row[] = '<a  href="javascript:void(0)" title="Editar" onclick="edit_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-pencil"></i> </a>
-                    <a href="javascript:void(0)" title="Eliminar" onclick="delete_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>
-                    <a  href="http://localhost:81/sami/order/pdf_order/'."$order->id".'" title="Imprimir" ><i class="glyphicon glyphicon-print"></i> </a>
-                    <a   href="javascript:void(0)" title="Liquidar" onclick="print_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-usd"></i> </a>';
+          $row[] = '<a  href="javascript:void(0)" title="Editar Orden" onclick="edit_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-pencil"></i> </a>
+                    <a href="javascript:void(0)" title="Eliminar Orden" onclick="delete_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-trash"></i> </a>
+                    <a  href="http://localhost:81/sami/order/pdf_order/'."$order->id".'" title="Imprimir Orden" ><i class="glyphicon glyphicon-print"></i> </a>
+                    <a   href="javascript:void(0)" title="Registrar Actividad" onclick="activity_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-th-list"></i> </a>
+                    <a   href="javascript:void(0)" title="Liquidar Orden" onclick="print_order('."'".$order->id."'".')"><i class="glyphicon glyphicon-usd"></i> </a>
+                    ';
         $data[] = $row;
       }
 
@@ -158,6 +160,11 @@ echo '<option value="0">...Seleccionar La Serie...</option>';
                 }
 public function ajax_edit($id){
         $data = $this->order->get_by_id($id);
+        echo json_encode($data);
+}
+
+public function ajax_edit_activity($id){
+        $data = $this->order->get_by_id_order_activity($id);
         echo json_encode($data);
 }
 
@@ -199,7 +206,7 @@ $escape = $this->input->post('frequency');
                                             'sdc' => $this->input->post('sdc'),
                                             'capex' => $this->input->post('capex'),
                                             'ordencompra' => $this->input->post('ordencompra'),
-
+                                            'ordenenka' => $this->input->post('ordenenka'),
                                             'code' => $cod
                                   );
                           $insert = $this->order->save($data);
@@ -239,7 +246,8 @@ $escape = $this->input->post('frequency');
                               'sdc' => $this->input->post('sdc'),
                               'capex' => $this->input->post('capex'),
                               'ordencompra' => $this->input->post('ordencompra'),
-'startActivity' => $this->input->post('startActivity'),
+                              'startActivity' => $this->input->post('startActivity'),
+                              'ordenenka' => $this->input->post('ordenenka'),
                               );
                             $this->order->update(array('id' => $this->input->post('id')), $data);
                             echo json_encode(array("status" => TRUE));

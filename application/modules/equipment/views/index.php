@@ -111,15 +111,32 @@
                                 <span class="help-block"></span>
                             </div>
                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                               <div class="form-group">
+                            <label class="control-label col-md-6">Código Interno</label>
+                            <div class="col-md-6">
+                                <input name="codeinte" placeholder="" class="form-control input-sm" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                          </div>
 
-
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Código</label>
-                            <div class="col-md-9">
+                           <div class="col-md-6">
+                               <div class="form-group">
+                            <label class="control-label col-md-6">Código Cliente</label>
+                            <div class="col-md-6">
                                 <input name="code" placeholder="" class="form-control input-sm" type="text">
                                 <span class="help-block"></span>
                             </div>
                         </div>
+                          </div>
+                      
+                          
+                        </div>
+
+
+                     
 
                         <div class="form-group">
                             <label class="control-label col-md-3">Motor</label>
@@ -396,6 +413,7 @@ function edit_equipment(id)
             $('[name="engine"]').val(data.engine);
             $('[name="status"]').val(data.status);
             $('[name="code"]').val(data.code);
+            $('[name="codeinte"]').val(data.codeinte);
             $('[name="mark"]').val(data.mark);
             $('[name="model"]').val(data.model);
             $('[name="serie"]').val(data.serie);
@@ -617,6 +635,7 @@ function detail_equipment(id)
         $('[name="engine"]').val(data.engine);
         $('[name="status"]').val(data.status);
         $('[name="code"]').val(data.code);
+        $('[name="codeinte"]').val(data.codeinte);
         $('[name="mark"]').val(data.mark);
         $('[name="model"]').val(data.model);
         $('[name="serie"]').val(data.serie);

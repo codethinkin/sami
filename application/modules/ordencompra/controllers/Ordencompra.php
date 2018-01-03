@@ -106,7 +106,8 @@ class Ordencompra extends CI_Controller{
       				"PROVEEDOR"			=>$OrderCompra->Proveedor,
       				"BRUTO"				=>$OrderCompra->Subtotal,
       				"TOTAL"				=>$OrderCompra->Total,
-      				"USUARIO"			=>$this->session->userdata('ID')
+      				"USUARIO"			=>$this->session->userdata('ID'),
+
       				);
       		$saveOrderDocument = $this->ordencompra_model->saveOrderDocumento($arrayDocumento);
 
@@ -120,8 +121,18 @@ class Ordencompra extends CI_Controller{
 
       				$precio = $value["precio"];
       				$precioV = $value["precioventa"];
+$existencia = $value["existencia"];
 
-      				$prome = (($precio+$precioV)/2);
+              $prome  = 0;
+
+                            if($precioV <= 0){
+                                  $prome  = $precio;
+
+                            }else{
+                                  $prome = (($precio+$precioV)/2);
+                            }
+
+      				//$prome = (($precio+$precioV)/2);
 
       				$arrayPartidas = array(
       					"ID_LINK"			=> $saveOrderDocument,

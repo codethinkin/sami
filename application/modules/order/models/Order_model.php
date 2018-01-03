@@ -28,7 +28,7 @@ var $table2 = 'order_has_order';
 
          private function _get_datatables_query($term=''){ //term is value of $_REQUEST['search']['value']
              $column = array('k.id','k.code',  'k.startActivity', 'k.activity', 'k.nit', 'k.state', 'c.nameCus', 'a.nameActivity', 'c.nit');
-             $this->db->select('k.id, k.code, k.startActivity, k.state, k.name, k.nit, k.activity, c.nameCus, c.nit, a.nameActivity');
+             $this->db->select('k.id, k.code, k.startActivity, k.state, k.name, k.nit, k.activity, k.ordenenka, c.nameCus, c.nit, a.nameActivity');
              $this->db->from('order as k');
              $this->db->join('customers as c', 'c.id = k.name','left');
             $this->db->join('activity as a', 'a.id = k.activity','left');
@@ -197,6 +197,27 @@ function count_filtered(){
           return $this->db->get()->row();
 
        }
+
+       function get_by_id_order_activity($id)
+        {
+            $this->db->select('o.id, o.nit, o.startActivity, o.sdc, o.code AS ordens, o.horometer, o.cotizacion, o.capex, o.ordencompra, concat((o.code),(" - "),(o.ordenenka))As orden, o.ordenenka, o.code, a.nameActivity AS activity, concat((c.nameCus),(" - "),(c.nit))As customers,
+                               c.id, e.code, e.mark, e.model, e.serie, e.equipmentType, o.autorized, q.nameFrequency AS frequency, o.observation, f.activityFrequency');
+           $this->db->from('order o');
+           $this->db->join('activity a', 'a.id = o.activity');
+           $this->db->join('customers c', 'c.id = o.name');
+           $this->db->join('equipment e', 'e.id = o.mark');
+           $this->db->join('frequency q', 'q.id = o.frequency');
+           $this->db->join('activity_frequency f', 'f.frequency = o.frequency');
+       //    $this->db->join('sector r', 'r.id = a.sector');
+       //    $this->db->join('employee e', 'e.id = a.employee');
+       //    $this->db->join('origin o', 'o.id = a.origin');
+           //$this->db->join('activity v', 'a.id = v.accounts');
+           //$this->db->join('comments c', 'a.id = c.accounts');
+       //    $this->db->where('a.type', '0');
+           $this->db->where('o.id',$id);
+           return $this->db->get()->row();
+
+        }
 
 function get_by_order($id){
   $this->db->select('o.id,  f.activityFrequency');

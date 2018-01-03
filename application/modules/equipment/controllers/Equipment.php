@@ -37,7 +37,7 @@ class Equipment extends CI_Controller{
           $row[] = '<input type="checkbox" class="data-check" value="'.$equipment->id.'">';
 
           $row[] = $equipment->nameCus;
-          $row[] = $equipment->nameType;
+          $row[] = $equipment->equipmentType;
           $row[] = $equipment->code;
           $row[] = $equipment->mark;
           $row[] = $equipment->model;
@@ -92,6 +92,7 @@ class Equipment extends CI_Controller{
                                               $data = array(
                                               'customers'           => $this->input->post('customers'),
                                               'code'                => $this->input->post('code'),
+                                              'codeinte'                => $this->input->post('codeinte'),
                                               'equipmentType'         => $this->input->post('equipmentType'),
                                               'etapa'               => $this->input->post('etapa'),
                                               'engine'              => $this->input->post('engine'),
@@ -114,7 +115,8 @@ class Equipment extends CI_Controller{
 
                               $data = array(
                                 'customers'           => $this->input->post('customers'),
-                                'codigo'              => $this->input->post('code'),
+                                'code'              => $this->input->post('code'),
+                                'codeinte'                => $this->input->post('codeinte'),
                                 'equipmentType'         => $this->input->post('equipmentType'),
                                 'etapa'               => $this->input->post('etapa'),
                                 'engine'              => $this->input->post('engine'),

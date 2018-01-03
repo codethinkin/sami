@@ -60,6 +60,8 @@ validate();
 				Producto.Proveedor   = $('input#nom_pro').val();
 				Producto.Costo		 = $('input#costo').val();
 				Producto.Pnuevo		 = $('input#precioventa').val();
+Producto.Existencia		 = $('input#existencia').val();
+
 				//Producto.FechaFactura = $('input#FechaFactura').val();
 
 				var DatosJson = JSON.stringify(Producto);
@@ -158,6 +160,7 @@ validate();
 				Producto.Factura     		= $('input#Factura').val();
 				Producto.FechaF     		= $('input#FechaFactura').val();
 				Producto.Proveedor          = $('input#nom_pro').val();
+Producto.Existencia  =  $('input#existencia').val();
 
 
 

@@ -69,9 +69,11 @@
                 <input type="hidden" value="" name="id"/>
                     <div class="form-body">
                         <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
-                        <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-7">
+                             <div class="form-group">
                           <label class="control-label col-md-3">Cliente</label>
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                               <select name="name" class="form-control input-sm" data-validate="required" id="customers"
                                         onchange="return get_equipment_sections(this.value)" required>
                                           <option value="">Seleccione</option>
@@ -89,6 +91,20 @@
                                 <span class="help-block"></span><span id="name_result"></span>
                             </div>
                         </div>
+                          </div>
+
+                           <div class="col-md-5">
+                            <div class="form-group">
+      <label class="control-label col-md-3" id="lblordenenka">Orden Trabajo</label>
+      <div class="col-md-6">
+    <input type="text" name="ordenenka" id="ordenenka" class="form-control input-sm">
+          <span class="help-block"></span>
+      </div>
+  </div>
+                          </div>
+
+                        </div>
+
 
 <div class="row">
 <div class="col-md-6">
@@ -162,24 +178,16 @@ onchange="return get_type_sections(this.value)"
   </div>
 </div>
 
-
-<div class="col-md-6">
-  <div class="form-group">
-      <label class="control-label col-md-6" id="lblState">Fecha</label>
-      <div class="col-md-6">
-      <input type="date" class="form-control input-sm" name="startActivity" id="startActivity" value="">
-          <span class="help-block"></span>
-      </div>
-  </div>
-
 </div>
 
 
 
+<div class="row">
+  <div class="col-md-7">
 
                         <div class="form-group">
                           <label class="control-label col-md-3">Tipo de Actividad</label>
-                            <div class="col-md-5">
+                            <div class="col-md-9">
                               <select name="activity" id="activity" class="form-control input-sm" data-validate="required" >
                                           <option value="">Seleccione</option>
                                                <?php
@@ -196,6 +204,21 @@ onchange="return get_type_sections(this.value)"
                                 <span class="help-block"></span><span id="name_result"></span>
                             </div>
                         </div>
+  </div>
+
+  <div class="col-md-5">
+
+      <div class="form-group">
+      <label class="control-label col-md-4" id="lblState">Fecha</label>
+      <div class="col-md-8">
+      <input type="date" class="form-control input-sm" name="startActivity" id="startActivity" value="">
+          <span class="help-block"></span>
+      </div>
+  </div>
+
+  </div>
+</div>
+
 
                         <div class="form-group" id="frequency" >
                           <label class="control-label col-md-3">Frecuencia</label>
@@ -329,6 +352,320 @@ onchange="return get_type_sections(this.value)"
 
 
 
+<div class="modal fade" id="modal_activity" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div id="msgbx_err" class="alert-box error" display="none" style="color:red;"></div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3">Cliente</label>
+                            <div class="col-md-8">
+                               <input type="text" name="customersorden" id="customersorden" class="form-control input-sm">
+                                      <span class="help-block"></span>
+                                  <span class="help-block"></span><span id="name_result"></span>
+
+                              </div>
+                        </div>
+
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group" id="dvequip">
+    <label class="control-label col-md-6">Equipo</label>
+      <div class="col-md-6">
+      <input type="text" name="equipmentorden" id="equipmentorden" class="form-control input-sm">
+                                      <span class="help-block"></span>
+                                  <span class="help-block"></span><span id="name_result"></span>
+
+      </div>
+  </div>
+
+
+                          <div class="form-group" id="dvmodel">
+                            <label class="control-label col-md-6">Orden de Trabajo</label>
+                            <div class="col-md-6">
+                                  <input type="text" name="orden1" id="orden1" class="form-control input-sm">
+                                      <span class="help-block"></span>
+                                  <span class="help-block"></span><span id="name_result"></span>
+                            </div>
+                          </div>
+</div>
+
+<div class="col-md-6">
+  <div class="form-group" id="dvmark">
+    <label class="control-label col-md-6">Tipo</label>
+      <div class="col-md-6">
+       <input type="text" name="typequipment" class="form-control input-sm">
+                                      <span class="help-block"></span>
+                                  <span class="help-block"></span><span id="name_result"></span>
+
+
+          <span class="help-block"></span><span id="name_result"></span>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+                      <label class="control-label col-md-6">Horometro</label>
+                        <div class="col-md-6">
+                              <input type="text" name="horometro" class="form-control input-sm">
+                                  <span class="help-block"></span>
+                              <span class="help-block"></span><span id="name_result"></span>
+                        </div>
+                    </div>
+</div>
+
+</div>
+
+                <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                                              <label class="control-label col-md-6">Información Daño</label>
+                                              <div class="form-group">
+                   <div class='input-group date' id='datetimepicker1'>
+                       <input type='text' class="form-control" />
+                       <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-calendar"></span>
+                       </span>
+                   </div>
+               </div>
+                                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                                              <label class="control-label col-md-6">Inicio Actividad</label>
+                                                <div class="col-md-6">
+                                                      <input type="text" name="iniactivity" id="iniactivity" class="form-control input-sm">
+                                                          <span class="help-block"></span>
+                                                      <span class="help-block"></span><span id="name_result"></span>
+                                                </div>
+                                            </div>
+                        </div>
+
+                        </div>
+
+                        <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label col-md-6" id="lblState">Inicio Labor:</label>
+                              <div class="col-md-6">
+                            <input type="text" name="iniciotrab" class="form-control input-sm">
+                                  <span class="help-block"></span>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label col-md-6" id="lblState">Fecha Entrega:</label>
+                              <div class="col-md-5">
+                            <input type="text" name="fechaentrega" class="form-control input-sm">
+                                  <span class="help-block"></span>
+                              </div>
+                          </div>
+                        </div>
+
+                        </div>
+
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                              <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                  Reporte Cliente
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label class="control-label col-md-6" id="lblState">Reporte Cliente:</label>
+                                      <div class="col-md-6">
+                                    <textarea name="reportecli" rows="8" cols="60"></textarea>
+                                          <span class="help-block"></span>
+                                      </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                              <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Técnicos
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                              <div class="panel-body">
+
+                                <input type="button" class="btn btn-lg btn-block btn-primary btn-xs " id="addrow_tecnico" value="Asignar Técnico" />
+                                  <table id="myTable" class=" table order-list">
+                                <thead>
+                                    <tr>
+                                        <td>Nombre</td>
+                                        <td>Actividad</td>
+                                        <td>Tiempo</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                      <td class="col-sm-8">
+                                          <input type="text" name="tecname" id="tecname" class="form-control input-sm" />
+                                      </td>
+
+                                      <td class="col-sm-3">
+                                            <input type="text" name="tecactivity" id="tecactivity"  class="form-control input-sm precio"/>
+                                        </td>
+                                        <td class="col-sm-8">
+                                            <input type="text" name="tectime" id="tectime" class="form-control input-sm cantidad" />
+                                        </td>
+
+                                        <td class="col-sm-2"><a class="Borrar"></a>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+
+                                    <tr>
+                                    </tr>
+                                </tfoot>
+                                </table>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  Actividades Realizadas
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                              <div class="panel-body">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label class="control-label col-md-6" id="lblState">Actividad Realizada Técnico:</label>
+                                      <div class="col-md-6">
+                                    <textarea name="reportecli" rows="8" cols="60"></textarea>
+                                          <span class="help-block"></span>
+                                      </div>
+                                  </div>
+                                </div>
+<div class="col-md-12">
+  <input type="button" class="btn btn-lg btn-block btn-primary btn-xs " id="addrow_insumos" value="Asignar Insumos" />
+    <table id="myTable" class=" table order-insu">
+  <thead>
+      <tr>
+          <td>Detalle</td>
+          <td>Cantidad</td>
+          <td>Valor</td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+
+        <td class="col-sm-6">
+            <input type="text" name="insudetalle" id="insudetalle" class="form-control input-sm" />
+        </td>
+
+        <td class="col-sm-3">
+              <input type="text" name="insucantidad" id="insucantidad"  class="form-control input-sm cantidad"/>
+          </td>
+          <td class="col-sm-3">
+              <input type="text" name="insuvalor" id="insuvalor" class="form-control input-sm precio" />
+          </td>
+
+          <td class="col-sm-2"><a class="Borrar"></a>
+
+          </td>
+      </tr>
+
+  </tbody>
+  <tfoot>
+
+      <tr>
+      </tr>
+  </tfoot>
+</table>
+
+</div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFord">
+                              <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFord" aria-expanded="false" aria-controls="collapseThree">
+                                  Estado Actividad
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseFord" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFord">
+                              <div class="panel-body">
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+        <label class="control-label col-md-6" id="lblState">Estado Actividad</label>
+        <div class="col-md-6">
+      <select  name="stateactivity" class="form-control input-sm" id="stateactivity" >
+        <option value="cerrada">Cerrada</option>
+        <option value="pendiente">Pendiente</option>
+      </select>
+            <span class="help-block"></span>
+        </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+<div class="col-md-6">
+<label for="" id="descripcionpen">Descripción Pendiente</label>
+<textarea name="pend" id="pend" rows="8" cols="70"></textarea>
+</div>
+
+</div>
+
+                                            </div>
+                            </div>
+                          </div>
+                        </div>
+                                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary btn-xs">Grabar</button>
+                <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div><!-- /.modal -->
+
+
+
+<!--Fin modal para el registro de actividades--->
+
+
+
+
 <div class="modal fade" id="modal_print_form" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -379,18 +716,29 @@ onchange="return get_type_sections(this.value)"
     <table id="myTable" class=" table order-list">
     <thead>
         <tr>
-            <td>DETALLE</td>
-            <td>PRECIO</td>
+            <td>CONCEPTO</td>
+            <td>VAL. UNIDAD</td>
+            <td>CANTIDAD</td>
+            <td>TOTAL</td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td class="col-sm-8">
-                <input type="text" name="detalleold" id="detalleold" class="form-control input-sm" />
-            </td>
+
+          <td class="col-sm-8">
+              <input type="text" name="detallecon" id="detallecon" class="form-control input-sm" />
+          </td>
+
           <td class="col-sm-3">
                 <input type="text" name="precioold" id="precioold"  class="form-control input-sm precio"/>
             </td>
+            <td class="col-sm-8">
+                <input type="text" name="detalleold" id="detalleold" class="form-control input-sm cantidad" />
+            </td>
+
+            <td class="col-sm-3">
+                  <input type="text" name="total" id="total"  class="form-control input-sm total"/>
+              </td>
             <td class="col-sm-2"><a class="Borrar"></a>
 
             </td>
@@ -432,15 +780,26 @@ $(document).ready(function() {
 
 
 
-
-
-
 $('#frequency').hide();
 $('#dvequip').hide();
 $('#dvmark').hide();
 $('#dvserie').hide();
 $('#dvmodel').hide();
 $('#dvtype').hide();
+$('#ordenenka').hide();
+$('#lblordenenka').hide();
+$('#descripcionpen').hide();
+$('#pend').hide();
+
+$("#stateactivity").change(function(){
+if($(this).val()=='pendiente'){
+$('#pend').show();
+$('#descripcionpen').show();
+}else{
+  $('#descripcionpen').hide();
+  $('#pend').hide();
+}
+});
 
 $("#customers").change(function(){
 $('#dvequip').show();
@@ -455,6 +814,22 @@ $("#activity").change(function(){
 $('#frequency').hide();
 if($(this).val()==2){$('#frequency').show();}
 });
+
+/*Activar campo orden trabajo de enka de colombia*/
+
+$("#customers").change(function(){
+$('#lblordenenka').hide();
+$('#ordenenka').hide();
+if($(this).val()==6){
+  $('#lblordenenka').show();
+  $('#ordenenka').show();
+}
+});
+
+/*Activar campo codigo de trabajao enka en la orden de trabajo de actividades correctivas y/o preventivas*/
+
+
+
 
 validate();
 
@@ -541,14 +916,17 @@ validate();
 
       });
 
-/**Agregar filass liquidacion**/
+/**Agregar filass tecnicos**/
 
-$("#addrow").on("click", function () {
+$("#addrow_tecnico").on("click", function () {
         var newRow = $("<tr>");
         var cols = "";
 
-        cols += '<td><input type="text" class="form-control input-sm  " name="detalleold' + counter + '"/></td>';
-        cols += '<td><input type="text" class="form-control input-sm precio" name="precioold' + counter + '"/></td>';
+
+        cols += '<td><input type="text" class="form-control input-sm  " name="tecname' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control input-sm precio" name="tecactivity' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control input-sm cantidad " name="tectime' + counter + '"/></td>';
+      //  cols += '<td><input type="text" class="form-control input-sm total  " name="total' + counter + '"/></td>';
 
         cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Borrar"></td>';
         newRow.append(cols);
@@ -556,10 +934,26 @@ $("#addrow").on("click", function () {
         counter++;
     });
 
-    $("table.order-list").on('input', '.precio', function () {
+    $("#addrow_insumos").on("click", function () {
+            var newRow = $("<tr>");
+            var cols = "";
+
+
+            cols += '<td><input type="text" class="form-control input-sm  " name="insudetalle' + counter + '"/></td>';
+            cols += '<td><input type="text" class="form-control input-sm cantidad" name="insucantidad' + counter + '"/></td>';
+            cols += '<td><input type="text" class="form-control input-sm precio " name="insuvalor' + counter + '"/></td>';
+          //  cols += '<td><input type="text" class="form-control input-sm total  " name="total' + counter + '"/></td>';
+
+            cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Borrar"></td>';
+            newRow.append(cols);
+            $("table.order-insu").append(newRow);
+            counter++;
+        });
+
+    $("table.order-list").on('input', '.total', function () {
            var calculated_total_sum = 0;
 
-           $("table.order-list .precio").each(function () {
+           $("table.order-list .total").each(function () {
                var get_textbox_value = $(this).val();
                if ($.isNumeric(get_textbox_value)) {
                   calculated_total_sum += parseFloat(get_textbox_value);
@@ -569,22 +963,38 @@ $("#addrow").on("click", function () {
            });
 
 
+           $("table.order-list").on('input', '.precio', function () {
+                  var calculated_total_precio = 0;
 
+                  $("table.order-list .precio").each(function () {
+                      var get_textbox_value = $(this).val();
+                      if ($.isNumeric(get_textbox_value)) {
+                         calculated_total_sum += parseFloat(get_textbox_value);
+                         }
+                       });
+                         $("#total_sum_value").html(calculated_total_sum);
+                  });
+
+
+
+
+///  ELIMINAR ITEM DEL FORMULARIO
     $("table.order-list").on("click", ".ibtnDel", function (event) {
         $(this).closest("tr").remove();
         counter -= 1
     });
 
 
+///CALCULAR  TOTAL DE LAS ACTIVIDADES
 
 function calculateRow(row) {
-    var price = +row.find('input[name^="price"]').val();
+    var total = +row.find('input[name^="total"]').val();
 
 }
 
 function calculateGrandTotal() {
     var grandTotal = 0;
-    $("table.order-list").find('input[name^="price"]').each(function () {
+    $("table.order-list").find('input[name^="total"]').each(function () {
         grandTotal += +$(this).val();
     });
     $("#grandtotal").text(grandTotal.toFixed(2));
@@ -637,8 +1047,8 @@ function edit_order(id)
             $('[name="observation"]').val(data.observation);
             $('[name="autorized"]').val(data.autorized);
             $('[name="startActivity"]').val(data.startActivity);
-          /*  $('[name="contact"]').val(data.contact);
-            $('[name="phone1"]').val(data.phone1);
+            $('[name="ordenenka"]').val(data.ordenenka);
+           /* $('[name="phone1"]').val(data.phone1);
             $('[name="phone2"]').val(data.phone2);
             $('[name="address"]').val(data.address);
             $('[name="email"]').val(data.email);*/
@@ -736,6 +1146,53 @@ function save_liq()
           }
 
       });
+
+}
+
+function activity_order(id)
+{
+
+  $('#lblorden2').hide();
+  $('#orden2').hide();
+    save_method = 'update';
+
+
+    $('#form')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+    $.ajax({
+         //url: "<?php echo site_url('order/ajax_edit')?>"/+id,
+       url : currentLocation + "/order/ajax_edit_activity/"+id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id);
+            $('[name="customersorden"]').val(data.customers);
+            $('[name="frequency"]').val(data.frequency);
+            $('[name="activity"]').val(data.activity);
+            $('[name="employee"]').val(data.employee);
+            $('[name="observation"]').val(data.observation);
+            $('[name="autorized"]').val(data.autorized);
+            $('[name="startActivity"]').val(data.startActivity);
+            $('[name="ordenenka"]').val(data.ordenenka);
+            $('[name="equipmentorden"]').val(data.code);
+            $('[name="typequipment"]').val(data.equipmentType);
+            $('[name="orden1"]').val(data.orden);
+            $('[name="orden2"]').val(data.ordenenka);
+            $('[name="state"]').val(data.state);
+            $('#modal_activity').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Registrar Actividad'); // Set title to Bootstrap modal title
+        },
+
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+
+    });
 
 }
 
@@ -992,9 +1449,34 @@ var id = $("#equipment_selector_holder").val();
                       }
                   });
 
-                };
+                }
+
+                ;
+
+function activar(){
 
 
+  var clienteorden =  $('[name="customersorden"]').val();
+
+
+                  if(clienteorden == "ENKA DE COLOMBIA SA  - 895124523-5"){
+
+                  $('#lblorden2').show();
+                  $('#orden2').show();
+
+                }
+
+}
+
+$(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+/*
+function refreshModal()
+      {
+        modal.location.reload(true);
+      }
+*/
 
 
 

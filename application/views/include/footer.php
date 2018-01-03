@@ -69,7 +69,24 @@
 <script src="<?php echo base_url('assets/js/demo.js');?>"></script>
 <script src="<?php echo base_url('assets/js/custom.js');?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui.js');?>"></script>
+<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
 
+<script type="text/javascript">
+		// Enable pusher logging - don't include this in production
+		Pusher.log = function(message) {
+			if (window.console && window.console.log) {
+				window.console.log(message);
+			}
+		};
+
+		var pusher = new Pusher('ab0ec8cbb4f1cdead28e');
+		var channel = pusher.subscribe('test_channel');
+
+		channel.bind('my_event', function(data) {
+			document.getElementById('event').innerHTML = data.message;
+			alert(data.message);
+		});
+	</script>
 
 <script>
 	function validate_fileType(fileName,Nameid,arrayValu)
@@ -129,6 +146,7 @@ case 'rcompras':?>
 <script src="<?php echo base_url('assets/js/rcompras.js'); ?>" ></script>
 <?php
 break;
+
 
 case 'dashboard':?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" ></script>

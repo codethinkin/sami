@@ -27,13 +27,24 @@ class Equipment_model extends CI_Model{
            }
        }
 
-       private function _get_datatables_query($term=''){ //term is value of $_REQUEST['search']['value']
-           $column = array('k.id','k.code',  'k.serie', 'k.activity', 'k.code', 'k.model', 'l.nameLoad', ' e.nameType', 'c.nameCus');
+       /*private function _get_datatables_query($term=''){ //term is value of $_REQUEST['search']['value']
+           $column = array('k.id','k.code',  'k.serie', 'k.activity', 'k.code', 'k.model', 'l.nameLoad', ' e.nameType', 'c.nameCus', 'k.equipmentType');
            $this->db->select('k.id, k.code, k.serie, k.mark, k.model, c.nameCus, l.nameLoad, e.nameType');
            $this->db->from('equipment as k');
            $this->db->join('customers as c', 'c.id = k.customers','left');
            $this->db->join('load as l', 'l.id = k.load','left');
            $this->db->join('equipmentType as e', 'e.id = k.equipmentType','left');
+           $this->db->like('k.id', $term);
+           $this->db->or_like('k.code', $term);
+           $this->db->or_like('k.serie', $term);
+          $this->db->or_like('l.nameLoad', $term);*/
+
+          private function _get_datatables_query($term=''){ //term is value of $_REQUEST['search']['value']
+           $column = array('k.id','k.code',  'k.serie', 'k.activity', 'k.code', 'k.model', 'l.nameLoad', ' e.nameType', 'c.nameCus', 'k.equipmentType');
+           $this->db->select('k.id, k.code, k.serie, k.mark, k.model, c.nameCus, l.nameLoad, k.equipmentType ');
+           $this->db->from('equipment as k');
+           $this->db->join('customers as c', 'c.id = k.customers','left');
+           $this->db->join('load as l', 'l.id = k.load','left');
            $this->db->like('k.id', $term);
            $this->db->or_like('k.code', $term);
            $this->db->or_like('k.serie', $term);

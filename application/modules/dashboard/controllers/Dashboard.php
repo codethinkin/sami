@@ -16,6 +16,8 @@ class Dashboard extends CI_Controller{
     is_login();
     if(CheckPermission("user", "own_read")){
 
+       
+
       $totalUser = $this->Dashboard_model->countUsers();
       $totalProduct = $this->Dashboard_model->countProduct();
       $totalVentas = $this->Dashboard_model->countVent();
